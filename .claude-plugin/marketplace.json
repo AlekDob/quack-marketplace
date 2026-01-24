@@ -3,7 +3,7 @@
   "description": "Official Quack marketplace - productivity plugins for Claude Code",
   "owner": {
     "name": "Quack Team",
-    "url": "https://github.com/AICodingDuck"
+    "url": "https://github.com/AlekDob"
   },
   "plugins": [
     {
