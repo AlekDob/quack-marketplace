@@ -1,0 +1,17 @@
+{
+  "name": "quack-marketplace",
+  "description": "Official Quack marketplace - productivity plugins for Claude Code",
+  "owner": {
+    "name": "Quack Team",
+    "url": "https://github.com/AICodingDuck"
+  },
+  "plugins": [
+    {
+      "name": "quack-brain",
+      "source": "./plugins/quack-brain",
+      "description": "Complete Second Brain system with file-based knowledge, Obsidian integration, and auto-learn capabilities",
+      "version": "2.0.0",
+      "tags": ["productivity", "knowledge", "obsidian", "second-brain"]
+    }
+  ]
+}
