@@ -1,0 +1,43 @@
+{
+  "name": "Weather Notification",
+  "description": "Fetch weather every N minutes and send macOS notification",
+  "steps": {
+    "trigger": {
+      "type": "PIECE_TRIGGER",
+      "pieceName": "@activepieces/piece-schedule",
+      "triggerName": "every_x_minutes",
+      "input": {
+        "minutes": 5
+      }
+    },
+    "fetch_weather": {
+      "type": "PIECE",
+      "pieceName": "@activepieces/piece-http",
+      "actionName": "send_request",
+      "input": {
+        "method": "GET",
+        "url": "https://wttr.in/{{CITY}}?format=3",
+        "authType": "NONE"
+      }
+    },
+    "send_notification": {
+      "type": "PIECE",
+      "pieceName": "@activepieces/piece-http",
+      "actionName": "send_request",
+      "input": {
+        "method": "POST",
+        "url": "http://host.docker.internal:9999",
+        "headers": {"Content-Type": "application/json"},
+        "body_type": "json",
+        "body": {
+          "action": "notify",
+          "title": "Weather Update",
+          "message": "{{fetch_weather.body}}"
+        }
+      }
+    }
+  },
+  "variables": {
+    "CITY": "Bari"
+  }
+}

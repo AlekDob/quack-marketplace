@@ -1,0 +1,57 @@
+{
+  "name": "API Health Monitor",
+  "description": "Monitor API endpoints and alert on failures",
+  "steps": {
+    "trigger": {
+      "type": "PIECE_TRIGGER",
+      "pieceName": "@activepieces/piece-schedule",
+      "triggerName": "every_x_minutes",
+      "input": {
+        "minutes": 5
+      }
+    },
+    "check_api": {
+      "type": "PIECE",
+      "pieceName": "@activepieces/piece-http",
+      "actionName": "send_request",
+      "input": {
+        "method": "GET",
+        "url": "{{API_URL}}",
+        "timeout": 10,
+        "failureMode": "continue_all"
+      }
+    },
+    "check_status": {
+      "type": "CODE",
+      "pieceName": "@activepieces/piece-code",
+      "actionName": "run_javascript",
+      "input": {
+        "code": "export const code = async (inputs) => {\n  const status = inputs.httpStatus;\n  const responseTime = inputs.responseTime;\n  const isHealthy = status >= 200 && status < 300;\n  \n  return {\n    isHealthy,\n    status,\n    responseTime,\n    message: isHealthy \n      ? `API is healthy (${status}) - ${responseTime}ms`\n      : `API is DOWN! Status: ${status}`\n  };\n};",
+        "inputs": {
+          "httpStatus": "{{check_api.status}}",
+          "responseTime": "{{check_api.duration}}"
+        }
+      }
+    },
+    "alert_if_down": {
+      "type": "PIECE",
+      "pieceName": "@activepieces/piece-http",
+      "actionName": "send_request",
+      "condition": "{{check_status.isHealthy}} == false",
+      "input": {
+        "method": "POST",
+        "url": "http://host.docker.internal:9999",
+        "headers": {"Content-Type": "application/json"},
+        "body_type": "json",
+        "body": {
+          "action": "notify",
+          "title": "API Alert",
+          "message": "{{check_status.message}}"
+        }
+      }
+    }
+  },
+  "variables": {
+    "API_URL": "https://api.example.com/health"
+  }
+}

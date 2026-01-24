@@ -1,0 +1,95 @@
+# ETL Data Sync Template
+# Extract data from source, transform, load to destination
+#
+# Customize:
+# - Change source and destination APIs
+# - Modify Python transformation logic
+# - Adjust schedule
+
+id: data-sync-etl
+namespace: etl
+description: |
+  Daily ETL pipeline: Extract from source API, transform with Python,
+  load to destination.
+
+triggers:
+  - id: daily_2am
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 2 * * *"
+    timezone: "Europe/Rome"
+
+inputs:
+  - id: source_url
+    type: STRING
+    defaults: "https://source-api.com/data"
+  - id: destination_url
+    type: STRING
+    defaults: "https://destination-api.com/import"
+
+tasks:
+  - id: extract
+    type: io.kestra.plugin.core.http.Request
+    uri: "{{ inputs.source_url }}"
+    method: GET
+    headers:
+      Accept: "application/json"
+
+  - id: log_extract
+    type: io.kestra.plugin.core.log.Log
+    message: "Extracted {{ outputs.extract.body | length }} bytes from source"
+
+  - id: transform
+    type: io.kestra.plugin.scripts.python.Commands
+    commands:
+      - python transform.py
+    inputFiles:
+      transform.py: |
+        import json
+        import os
+
+        # Read extracted data (passed via environment or file)
+        raw_data = '''{{ outputs.extract.body }}'''
+
+        try:
+            data = json.loads(raw_data)
+
+            # Transform logic here
+            # Example: Filter, map, aggregate
+            transformed = {
+                "items": data.get("items", []),
+                "processed_at": "{{ now() }}",
+                "source": "kestra-etl"
+            }
+
+            # Output for next task
+            with open('output.json', 'w') as f:
+                json.dump(transformed, f)
+
+            print(f"Transformed {len(transformed.get('items', []))} items")
+        except Exception as e:
+            print(f"Transform error: {e}")
+            raise
+    outputFiles:
+      - output.json
+
+  - id: load
+    type: io.kestra.plugin.core.http.Request
+    uri: "{{ inputs.destination_url }}"
+    method: POST
+    headers:
+      Content-Type: "application/json"
+    body: "{{ read(outputs.transform.outputFiles['output.json']) }}"
+
+  - id: log_complete
+    type: io.kestra.plugin.core.log.Log
+    message: "ETL complete. Load response: {{ outputs.load.code }}"
+
+errors:
+  - id: notify_failure
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: |
+      ETL Pipeline Failed!
+      Flow: {{ flow.id }}
+      Execution: {{ execution.id }}
+      Check logs for details.

@@ -1,0 +1,61 @@
+# API Health Check Template
+# Monitors an API endpoint and logs the status
+#
+# Customize:
+# - Change the URI to your API endpoint
+# - Adjust cron schedule as needed
+# - Add notification on failure (see errors section)
+
+id: api-health-check
+namespace: monitoring
+description: |
+  Periodically check API health and log status.
+  Triggers every 5 minutes.
+
+triggers:
+  - id: every_5_minutes
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "*/5 * * * *"
+
+inputs:
+  - id: endpoint
+    type: STRING
+    defaults: "https://api.example.com/health"
+    description: API endpoint to check
+
+tasks:
+  - id: check_api
+    type: io.kestra.plugin.core.http.Request
+    uri: "{{ inputs.endpoint }}"
+    method: GET
+    options:
+      connectTimeout: PT10S
+      readTimeout: PT30S
+    retry:
+      type: constant
+      maxAttempt: 2
+      interval: PT5S
+    allowFailure: true
+
+  - id: log_result
+    type: io.kestra.plugin.core.log.Log
+    message: |
+      API Health Check Result:
+      - Endpoint: {{ inputs.endpoint }}
+      - Status: {{ outputs.check_api.code }}
+      - Time: {{ now() }}
+
+  - id: check_status
+    type: io.kestra.plugin.core.flow.If
+    condition: "{{ outputs.check_api.code != 200 }}"
+    then:
+      - id: alert_down
+        type: io.kestra.plugin.core.log.Log
+        level: ERROR
+        message: "ALERT: API is DOWN! Status: {{ outputs.check_api.code }}"
+
+errors:
+  - id: notify_failure
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: "Health check failed completely for {{ inputs.endpoint }}"

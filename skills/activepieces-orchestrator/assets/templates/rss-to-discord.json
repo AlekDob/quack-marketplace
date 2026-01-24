@@ -1,0 +1,50 @@
+{
+  "name": "RSS to Discord",
+  "description": "Post new RSS feed items to Discord channel",
+  "steps": {
+    "trigger": {
+      "type": "PIECE_TRIGGER",
+      "pieceName": "@activepieces/piece-rss",
+      "triggerName": "new_item_in_feed",
+      "input": {
+        "feed_url": "{{RSS_FEED_URL}}"
+      }
+    },
+    "format_message": {
+      "type": "CODE",
+      "pieceName": "@activepieces/piece-code",
+      "actionName": "run_javascript",
+      "input": {
+        "code": "export const code = async (inputs) => {\n  const { title, link, description } = inputs;\n  const cleanDesc = description?.replace(/<[^>]*>/g, '').substring(0, 200) || '';\n  \n  return {\n    content: `**${title}**\\n${cleanDesc}...\\n\\n🔗 ${link}`\n  };\n};",
+        "inputs": {
+          "title": "{{trigger.title}}",
+          "link": "{{trigger.link}}",
+          "description": "{{trigger.description}}"
+        }
+      }
+    },
+    "post_to_discord": {
+      "type": "PIECE",
+      "pieceName": "@activepieces/piece-http",
+      "actionName": "send_request",
+      "input": {
+        "method": "POST",
+        "url": "{{DISCORD_WEBHOOK_URL}}",
+        "headers": {"Content-Type": "application/json"},
+        "body_type": "json",
+        "body": {
+          "content": "{{format_message.content}}",
+          "username": "RSS Bot"
+        }
+      }
+    }
+  },
+  "variables": {
+    "RSS_FEED_URL": "https://news.ycombinator.com/rss",
+    "DISCORD_WEBHOOK_URL": "https://discord.com/api/webhooks/..."
+  },
+  "notes": [
+    "Get Discord webhook URL: Server Settings > Integrations > Webhooks > New Webhook",
+    "Trigger checks feed every 5 minutes by default"
+  ]
+}
