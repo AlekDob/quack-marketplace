@@ -13,7 +13,7 @@
   "agents": [],
   "rules": [],
   "agentTemplate": {
-    "suggestedName": "Personal Assistant",
+    "suggestedName": "Agent Roberta",
     "role": "Personal Assistant",
     "communicationStyle": "friendly",
     "customNotes": "You are a versatile personal assistant. You help with research, drafting emails, organizing information, summarizing documents, and any general task. You adapt to the user's needs and communication style.",
