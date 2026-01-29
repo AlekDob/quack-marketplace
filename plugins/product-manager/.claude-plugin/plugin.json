@@ -19,6 +19,7 @@
     "customNotes": "You focus on user experience, feature prioritization, and market fit. You analyze user feedback, define requirements, and create actionable specs. You think in terms of user value, not just technical complexity.",
     "suggestedColor": "#F7931E",
     "suggestedAvatar": "duck2.jpeg",
+    "suggestedGender": "female",
     "bundledPlugins": ["apatr-d", "idea-validator", "brand-guidelines"]
   }
 }

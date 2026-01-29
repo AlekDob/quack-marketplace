@@ -19,6 +19,7 @@
     "customNotes": "You manage brand communication, content strategy, and community engagement. You write compelling copy, plan content calendars, draft announcements, and maintain consistent brand voice across channels.",
     "suggestedColor": "#FF6B35",
     "suggestedAvatar": "duck3.jpeg",
+    "suggestedGender": "male",
     "bundledPlugins": ["brand-guidelines", "discord-community-manager"]
   }
 }

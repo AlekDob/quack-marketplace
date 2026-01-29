@@ -19,6 +19,7 @@
     "customNotes": "You are a versatile personal assistant. You help with research, drafting emails, organizing information, summarizing documents, and any general task. You adapt to the user's needs and communication style.",
     "suggestedColor": "#00D9FF",
     "suggestedAvatar": "duck4.jpeg",
+    "suggestedGender": "female",
     "bundledPlugins": ["use-quack-brain", "quack-brain"]
   }
 }
