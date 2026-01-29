@@ -1,0 +1,15 @@
+{
+  "name": "apatr-d",
+  "version": "1.0.0",
+  "description": "Analyze-Plan-Act-Test-Review-Document workflow for quality, traceability, and knowledge retention in development tasks.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["workflow", "quality", "development", "methodology"],
+  "skills": [],
+  "agents": [],
+  "rules": ["rules/apatr-d.md"]
+}

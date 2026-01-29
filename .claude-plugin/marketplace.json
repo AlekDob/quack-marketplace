@@ -12,6 +12,69 @@
       "description": "Complete Second Brain system with file-based knowledge, Obsidian integration, and auto-learn capabilities",
       "version": "2.0.0",
       "tags": ["productivity", "knowledge", "obsidian", "second-brain"]
+    },
+    {
+      "name": "idea-validator",
+      "source": "./plugins/idea-validator",
+      "description": "Brutally honest validation of app ideas before building",
+      "version": "1.0.0",
+      "tags": ["product", "validation", "startup", "market-research"]
+    },
+    {
+      "name": "brand-guidelines",
+      "source": "./plugins/brand-guidelines",
+      "description": "Quack design system with UI patterns, colors, typography, and components",
+      "version": "1.0.0",
+      "tags": ["design-system", "ui", "brand"]
+    },
+    {
+      "name": "discord-community-manager",
+      "source": "./plugins/discord-community-manager",
+      "description": "Expert Discord community manager for developer communities",
+      "version": "1.0.0",
+      "tags": ["discord", "community", "moderation"]
+    },
+    {
+      "name": "apatr-d",
+      "source": "./plugins/apatr-d",
+      "description": "Analyze-Plan-Act-Test-Review-Document development workflow",
+      "version": "1.0.0",
+      "tags": ["workflow", "quality", "methodology"]
+    },
+    {
+      "name": "use-quack-brain",
+      "source": "./plugins/use-quack-brain",
+      "description": "Rule for using Quack Brain as a file-based Second Brain",
+      "version": "1.0.0",
+      "tags": ["second-brain", "knowledge", "rules"]
+    },
+    {
+      "name": "project-manager",
+      "source": "./plugins/project-manager",
+      "description": "Project Manager agent - plans, evaluates feasibility, coordinates quality",
+      "version": "1.0.0",
+      "tags": ["onboarding", "management", "starter", "agent-template"]
+    },
+    {
+      "name": "product-manager",
+      "source": "./plugins/product-manager",
+      "description": "Product Manager agent - UX, feature prioritization, market fit",
+      "version": "1.0.0",
+      "tags": ["onboarding", "product", "starter", "agent-template"]
+    },
+    {
+      "name": "marketing-comms",
+      "source": "./plugins/marketing-comms",
+      "description": "Marketing & Communication agent - brand voice, content strategy, community",
+      "version": "1.0.0",
+      "tags": ["onboarding", "marketing", "starter", "agent-template"]
+    },
+    {
+      "name": "personal-assistant",
+      "source": "./plugins/personal-assistant",
+      "description": "Personal Assistant agent - research, organizing, summarizing, general tasks",
+      "version": "1.0.0",
+      "tags": ["onboarding", "productivity", "starter", "agent-template"]
     }
   ]
 }

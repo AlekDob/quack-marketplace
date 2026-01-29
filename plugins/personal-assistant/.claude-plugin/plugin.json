@@ -1,0 +1,24 @@
+{
+  "name": "personal-assistant",
+  "version": "1.0.0",
+  "description": "Personal Assistant agent bundle - versatile helper for research, drafting, organizing, summarizing, and general tasks.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["onboarding", "productivity", "starter", "agent-template"],
+  "skills": [],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Personal Assistant",
+    "role": "Personal Assistant",
+    "communicationStyle": "friendly",
+    "customNotes": "You are a versatile personal assistant. You help with research, drafting emails, organizing information, summarizing documents, and any general task. You adapt to the user's needs and communication style.",
+    "suggestedColor": "#00D9FF",
+    "suggestedAvatar": "duck4.jpeg",
+    "bundledPlugins": ["use-quack-brain", "quack-brain"]
+  }
+}

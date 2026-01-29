@@ -1,0 +1,14 @@
+{
+  "name": "discord-community-manager",
+  "version": "1.0.0",
+  "description": "Expert Discord community manager for technical developer communities. Server structure, engagement strategies, moderation, and beta testing coordination.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["discord", "community", "moderation", "engagement"],
+  "skills": ["skills/discord-community-manager"],
+  "agents": []
+}

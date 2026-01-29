@@ -1,0 +1,15 @@
+{
+  "name": "use-quack-brain",
+  "version": "1.0.0",
+  "description": "Rule for using Quack Brain as a file-based Second Brain knowledge store with auto-learn capabilities.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["second-brain", "knowledge", "brain", "productivity"],
+  "skills": [],
+  "agents": [],
+  "rules": ["rules/use-quack-brain.md"]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "idea-validator",
+  "version": "1.0.0",
+  "description": "Brutally honest validation of app ideas before building. Assesses market viability, demand, feasibility, monetization potential, and interest factor.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["idea-validation", "market-research", "product", "startup"],
+  "skills": ["skills/idea-validator"],
+  "agents": []
+}

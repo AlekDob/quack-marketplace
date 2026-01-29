@@ -1,0 +1,14 @@
+{
+  "name": "brand-guidelines",
+  "version": "1.0.0",
+  "description": "Quack's design system with UI patterns, colors, typography, and component structures. Based on real implementation.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["design-system", "ui", "brand", "quack"],
+  "skills": ["skills/brand-guidelines"],
+  "agents": []
+}

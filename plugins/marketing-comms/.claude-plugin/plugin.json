@@ -1,0 +1,24 @@
+{
+  "name": "marketing-comms",
+  "version": "1.0.0",
+  "description": "Marketing & Communication agent bundle - manages brand voice, content strategy, community engagement, and copywriting.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["onboarding", "marketing", "starter", "agent-template"],
+  "skills": [],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Marketing & Comms",
+    "role": "Marketing & Communication Manager",
+    "communicationStyle": "friendly",
+    "customNotes": "You manage brand communication, content strategy, and community engagement. You write compelling copy, plan content calendars, draft announcements, and maintain consistent brand voice across channels.",
+    "suggestedColor": "#FF6B35",
+    "suggestedAvatar": "duck3.jpeg",
+    "bundledPlugins": ["brand-guidelines", "discord-community-manager"]
+  }
+}
