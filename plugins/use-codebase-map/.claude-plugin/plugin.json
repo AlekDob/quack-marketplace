@@ -1,0 +1,15 @@
+{
+  "name": "use-codebase-map",
+  "version": "1.0.0",
+  "description": "Rule that instructs AI agents to read the auto-generated codebase map before exploratory code searches. Reduces tool calls by 60-80%.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["codebase-map", "navigation", "context-optimization", "productivity"],
+  "skills": [],
+  "agents": [],
+  "rules": ["rules/use-codebase-map.md"]
+}

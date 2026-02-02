@@ -20,6 +20,6 @@
     "suggestedColor": "#F7931E",
     "suggestedAvatar": "duck2.jpeg",
     "suggestedGender": "female",
-    "bundledPlugins": ["apatr-d", "idea-validator", "brand-guidelines"]
+    "bundledPlugins": ["apatr-d", "use-codebase-map", "idea-validator", "brand-guidelines"]
   }
 }
