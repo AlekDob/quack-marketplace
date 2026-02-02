@@ -1,16 +1,17 @@
 {
   "name": "quack-brain",
-  "version": "2.0.0",
-  "description": "File-based Second Brain with auto-learn, Obsidian integration, and knowledge management. Includes markdown editing, canvas creation, and Obsidian Bases support.",
+  "version": "2.1.0",
+  "description": "File-based Second Brain with auto-learn, Obsidian integration, knowledge management, and Codebase Map for fast AI navigation. Includes markdown editing, canvas creation, and Obsidian Bases support.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AICodingDuck"
   },
   "repository": "https://github.com/AlekDob/quack-marketplace",
   "license": "MIT",
-  "keywords": ["second-brain", "obsidian", "knowledge-management", "auto-learn", "markdown"],
+  "keywords": ["second-brain", "obsidian", "knowledge-management", "auto-learn", "markdown", "codebase-map"],
   "skills": [
     "skills/quack-brain",
+    "skills/codebase-map",
     "skills/obsidian-markdown",
     "skills/obsidian-canvas-creator",
     "skills/obsidian-bases",
