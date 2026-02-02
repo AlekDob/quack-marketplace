@@ -49,6 +49,13 @@
       "tags": ["second-brain", "knowledge", "rules"]
     },
     {
+      "name": "use-codebase-map",
+      "source": "./plugins/use-codebase-map",
+      "description": "Rule that instructs AI agents to read the auto-generated codebase map before exploratory searches, reducing tool calls by 60-80%",
+      "version": "1.0.0",
+      "tags": ["codebase-map", "navigation", "context-optimization", "rules"]
+    },
+    {
       "name": "project-manager",
       "source": "./plugins/project-manager",
       "description": "Project Manager agent - plans, evaluates feasibility, coordinates quality",
