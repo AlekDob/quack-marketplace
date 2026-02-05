@@ -20,6 +20,6 @@
     "suggestedColor": "#00D9FF",
     "suggestedAvatar": "duck4.jpeg",
     "suggestedGender": "female",
-    "bundledPlugins": ["use-quack-brain", "quack-brain"]
+    "bundledPlugins": ["quack-brain"]
   }
 }
