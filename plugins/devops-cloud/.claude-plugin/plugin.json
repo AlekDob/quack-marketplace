@@ -24,6 +24,6 @@
     "suggestedColor": "#F38020",
     "suggestedAvatar": "duck8.jpeg",
     "suggestedGender": "female",
-    "skills": ["devops-cloud"]
+    "skills": ["cloudflare-workers", "turborepo-monorepo", "github-actions"]
   }
 }

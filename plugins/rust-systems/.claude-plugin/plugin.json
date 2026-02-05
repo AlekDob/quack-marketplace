@@ -24,6 +24,6 @@
     "suggestedColor": "#CE422B",
     "suggestedAvatar": "duck7.jpeg",
     "suggestedGender": "male",
-    "skills": ["rust-systems"]
+    "skills": ["rust-async", "rust-memory", "rust-error-handling"]
   }
 }

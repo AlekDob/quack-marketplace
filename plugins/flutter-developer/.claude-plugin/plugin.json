@@ -24,6 +24,6 @@
     "suggestedColor": "#02569B",
     "suggestedAvatar": "duck5.jpeg",
     "suggestedGender": "male",
-    "skills": ["flutter-developer"]
+    "skills": ["flutter-widgets", "flutter-state", "flutter-navigation"]
   }
 }

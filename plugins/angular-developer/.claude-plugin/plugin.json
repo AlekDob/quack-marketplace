@@ -24,6 +24,6 @@
     "suggestedColor": "#dd0031",
     "suggestedAvatar": "duck4.jpeg",
     "suggestedGender": "male",
-    "skills": ["angular-developer"]
+    "skills": ["angular-signals", "angular-components", "angular-routing"]
   }
 }
