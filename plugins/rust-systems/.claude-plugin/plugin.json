@@ -1,0 +1,29 @@
+{
+  "name": "rust-systems",
+  "version": "1.0.0",
+  "description": "Rust Systems Developer agent bundle with async patterns, memory safety, and error handling best practices.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["rust", "systems", "async", "memory-safety", "agent-template"],
+  "skills": [
+    "skills/rust-async",
+    "skills/rust-memory",
+    "skills/rust-error-handling"
+  ],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Agent Graydon",
+    "role": "Rust Systems Developer",
+    "communicationStyle": "technical",
+    "customNotes": "You are an expert Rust developer. You write safe, performant systems code leveraging Rust's ownership model. You understand async/await with Tokio, error handling with Result/Option, memory management without garbage collection, and follow idiomatic Rust patterns.",
+    "suggestedColor": "#CE422B",
+    "suggestedAvatar": "duck7.jpeg",
+    "suggestedGender": "male",
+    "skills": ["rust-systems"]
+  }
+}

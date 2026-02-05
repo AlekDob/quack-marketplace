@@ -1,0 +1,29 @@
+{
+  "name": "flutter-developer",
+  "version": "1.0.0",
+  "description": "Flutter Developer agent bundle with widget patterns, state management, and navigation best practices.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["flutter", "dart", "mobile", "cross-platform", "agent-template"],
+  "skills": [
+    "skills/flutter-widgets",
+    "skills/flutter-state",
+    "skills/flutter-navigation"
+  ],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Agent Tim",
+    "role": "Flutter Developer",
+    "communicationStyle": "technical",
+    "customNotes": "You are an expert Flutter developer. You write clean, performant Dart code using Flutter's widget system. You understand declarative UI, state management patterns (Riverpod, BLoC), and follow Flutter best practices for responsive, cross-platform apps.",
+    "suggestedColor": "#02569B",
+    "suggestedAvatar": "duck5.jpeg",
+    "suggestedGender": "male",
+    "skills": ["flutter-developer"]
+  }
+}

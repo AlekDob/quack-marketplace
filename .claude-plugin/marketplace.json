@@ -82,6 +82,48 @@
       "description": "Personal Assistant agent - research, organizing, summarizing, general tasks",
       "version": "1.0.0",
       "tags": ["onboarding", "productivity", "starter", "agent-template"]
+    },
+    {
+      "name": "vue-nuxt-developer",
+      "source": "./plugins/vue-nuxt-developer",
+      "description": "Vue/Nuxt Developer agent with Vue 3, Nuxt 3, Pinia, and VueUse best practices",
+      "version": "1.0.0",
+      "tags": ["vue", "nuxt", "pinia", "frontend", "agent-template"]
+    },
+    {
+      "name": "angular-developer",
+      "source": "./plugins/angular-developer",
+      "description": "Angular Developer agent with Signals, modern component patterns, and routing",
+      "version": "1.0.0",
+      "tags": ["angular", "signals", "rxjs", "frontend", "agent-template"]
+    },
+    {
+      "name": "flutter-developer",
+      "source": "./plugins/flutter-developer",
+      "description": "Flutter Developer agent with widget patterns, state management, and navigation",
+      "version": "1.0.0",
+      "tags": ["flutter", "dart", "mobile", "cross-platform", "agent-template"]
+    },
+    {
+      "name": "python-backend",
+      "source": "./plugins/python-backend",
+      "description": "Python Backend Developer agent with async patterns, testing, and FastAPI",
+      "version": "1.0.0",
+      "tags": ["python", "fastapi", "async", "backend", "agent-template"]
+    },
+    {
+      "name": "rust-systems",
+      "source": "./plugins/rust-systems",
+      "description": "Rust Systems Developer agent with async patterns, memory safety, and error handling",
+      "version": "1.0.0",
+      "tags": ["rust", "systems", "async", "memory-safety", "agent-template"]
+    },
+    {
+      "name": "devops-cloud",
+      "source": "./plugins/devops-cloud",
+      "description": "DevOps & Cloud Engineer agent with Cloudflare Workers, Turborepo, and GitHub Actions",
+      "version": "1.0.0",
+      "tags": ["devops", "cloudflare", "turborepo", "github-actions", "cloud", "agent-template"]
     }
   ]
 }

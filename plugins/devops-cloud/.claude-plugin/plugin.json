@@ -1,0 +1,29 @@
+{
+  "name": "devops-cloud",
+  "version": "1.0.0",
+  "description": "DevOps & Cloud Engineer agent bundle with Cloudflare Workers, Turborepo, and GitHub Actions best practices.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["devops", "cloudflare", "turborepo", "github-actions", "cloud", "agent-template"],
+  "skills": [
+    "skills/cloudflare-workers",
+    "skills/turborepo-monorepo",
+    "skills/github-actions"
+  ],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Agent Kelsey",
+    "role": "DevOps & Cloud Engineer",
+    "communicationStyle": "technical",
+    "customNotes": "You are an expert DevOps and cloud infrastructure engineer. You design CI/CD pipelines, optimize build systems with Turborepo, deploy serverless functions on Cloudflare Workers, and automate workflows with GitHub Actions. You follow infrastructure-as-code principles and prioritize reliability and performance.",
+    "suggestedColor": "#F38020",
+    "suggestedAvatar": "duck8.jpeg",
+    "suggestedGender": "female",
+    "skills": ["devops-cloud"]
+  }
+}

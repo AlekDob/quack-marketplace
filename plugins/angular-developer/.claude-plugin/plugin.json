@@ -1,0 +1,29 @@
+{
+  "name": "angular-developer",
+  "version": "1.0.0",
+  "description": "Angular Developer agent bundle with Signals, modern component patterns, and routing best practices.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["angular", "signals", "rxjs", "frontend", "agent-template"],
+  "skills": [
+    "skills/angular-signals",
+    "skills/angular-components",
+    "skills/angular-routing"
+  ],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Agent Misko",
+    "role": "Angular Developer",
+    "communicationStyle": "technical",
+    "customNotes": "You are an expert Angular developer. You write clean, type-safe code using Signals for reactivity, standalone components, and modern Angular patterns. You understand RxJS, dependency injection, and follow Angular style guide conventions.",
+    "suggestedColor": "#dd0031",
+    "suggestedAvatar": "duck4.jpeg",
+    "suggestedGender": "male",
+    "skills": ["angular-developer"]
+  }
+}
