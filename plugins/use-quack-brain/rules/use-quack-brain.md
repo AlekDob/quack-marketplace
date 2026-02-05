@@ -1,10 +1,17 @@
 ---
-description: "Use Quack Brain as Second Brain - file-based knowledge storage in ~/.quack/brain/"
+description: "Use Quack Brain as Second Brain - two-level knowledge storage"
 ---
 
-# Quack Brain - Second Brain
+# Quack Brain - Two-Level Second Brain
 
 File-based knowledge store using markdown files with YAML frontmatter.
+
+## Architecture
+
+Two levels of knowledge storage:
+
+1. **Project Brain** (`{project}/.quack/brain/`) - Project-specific, shareable with team
+2. **Global Brain** (`~/.quack/brain/global/`) - Personal, cross-project patterns
 
 ## When to SEARCH Brain
 
@@ -13,21 +20,26 @@ File-based knowledge store using markdown files with YAML frontmatter.
 - When making architectural decisions
 - When user asks about past work or decisions
 
-## Search Priority
+## Search Priority: Project → Global
 
-1. Read map.md for architecture orientation
-2. List project files (titles are self-descriptive)
-3. Check inbox/ for pending items
-4. Search globally if needed
+1. Read project's `map.md` for architecture orientation
+2. List project brain files (titles are self-descriptive)
+3. Check project's `inbox/` for pending items
+4. Search global brain for cross-project patterns
 5. Read specific files matching your need
 
 ## When to SAVE to Brain
 
-- Tricky bug fixes
-- Patterns that work well
-- Architectural decisions and rationale
-- Solutions useful in the future
-- Configuration gotchas
+**Project Brain** (`{project}/.quack/brain/`):
+- Bug fixes specific to this project
+- Architecture decisions for this project
+- Project-specific patterns and gotchas
+
+**Global Brain** (`~/.quack/brain/global/`):
+- Reusable patterns across projects
+- Personal preferences and style
+- People and contacts
+- Tool configurations
 
 ## Auto-Evaluation
 
@@ -41,6 +53,19 @@ All true -> save. Any false -> don't save.
 
 ## Directory Structure
 
-~/.quack/brain/
-- global/ (patterns, preferences, people, tools)
-- projects/{name}/ (patterns, bugs, decisions, gotchas, diary, inbox, map.md)
+```
+{project}/.quack/brain/        # Project-specific (shareable)
+├── patterns/
+├── bugs/
+├── decisions/
+├── gotchas/
+├── diary/
+├── inbox/
+└── map.md
+
+~/.quack/brain/global/         # Personal (cross-project)
+├── patterns/
+├── preferences/
+├── people/
+└── tools/
+```

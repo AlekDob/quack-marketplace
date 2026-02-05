@@ -1,38 +1,57 @@
 ---
 name: quack-brain
 description: Read, write, and search the user's file-based Second Brain knowledge store. Activates when tasks involve learning from past solutions, saving discoveries, or needing project context.
+context: fork
 ---
 
-# Quack Brain - File-Based Second Brain
+# Quack Brain - Two-Level Second Brain
 
-The user's knowledge is stored as markdown files. The default path is `~/.quack/brain/`, but users can configure a custom location.
+Quack Brain uses a **two-level architecture**:
 
-**IMPORTANT: Discover the brain path first.** Read the file `~/.quack/brain-path` — it contains the actual brain root path (one line, absolute path). If the file doesn't exist, fall back to `~/.quack/brain/`.
-
-```
-# First discover the actual brain location:
-Read ~/.quack/brain-path
-# Contains e.g.: /Users/alekdob/Desktop/Dev/brain/QuackBrain
-```
+1. **Project Brain** (`{project}/.quack/brain/`) - Project-specific knowledge, shareable with team
+2. **Global Brain** (`~/.quack/brain/global/`) - Personal knowledge, cross-project patterns, preferences
 
 ## Structure
 
+### Project Brain (per-project, shareable)
+
+Located in each project's root directory:
+
 ```
-~/.quack/brain/
-├── global/                    # Cross-project knowledge
-│   ├── patterns/              # Reusable code patterns
-│   ├── preferences/           # User preferences and style
-│   ├── people/                # Contacts and collaborators
-│   └── tools/                 # Tool configs and tips
-└── projects/
-    └── {project-name}/        # Project-scoped knowledge
-        ├── patterns/          # Project-specific patterns
-        ├── bugs/              # Bug fixes and solutions
-        ├── decisions/         # Architecture Decision Records
-        ├── gotchas/           # Pitfalls and workarounds
-        ├── diary/             # Daily progress log
-        ├── inbox/             # Quick ideas & todos (mobile-first)
-        └── map.md             # Architecture map & glossary
+{project}/.quack/brain/
+├── patterns/          # Project-specific patterns
+├── bugs/              # Bug fixes and solutions
+├── decisions/         # Architecture Decision Records (ADRs)
+├── gotchas/           # Pitfalls and workarounds
+├── diary/             # Daily progress log
+├── inbox/             # Quick ideas & todos (mobile-first)
+└── map.md             # Architecture map & glossary
+```
+
+**Note:** Project brain should NOT be gitignored - it's meant to be shared with your team.
+
+### Global Brain (personal, cross-project)
+
+Located at `~/.quack/brain/global/`:
+
+```
+~/.quack/brain/global/
+├── patterns/          # Reusable code patterns across projects
+├── preferences/       # Personal preferences and style
+├── people/            # Contacts and collaborators
+└── tools/             # Tool configs and tips
+```
+
+## Migration from Old Structure
+
+If you have existing files in `~/.quack/brain/projects/{project-name}/`, migrate them:
+
+```bash
+# For each project, copy brain files to project directory
+cp -r ~/.quack/brain/projects/{project-name}/* {project}/.quack/brain/
+
+# After verifying migration, clean up old location
+rm -rf ~/.quack/brain/projects/
 ```
 
 ## File Format
@@ -155,50 +174,67 @@ updated: 2026-01-24
 
 Before starting complex tasks, search for relevant past knowledge. Follow this **priority order**:
 
-### Search Priority
+### Search Priority: Project Brain → Global Brain
 
-1. **First**: Read `map.md` if you need to locate components or understand architecture
-2. **Then**: List files in the current project's brain folder — file names are designed to be self-explanatory
-3. **Then**: Check `inbox/` for any pending items relevant to your current task
-4. **Then**: Only if nothing relevant found, search globally across `~/.quack/brain/`
+1. **First**: Read project's `map.md` for architecture orientation
+2. **Then**: List files in project brain — file names are designed to be self-explanatory
+3. **Then**: Check project's `inbox/` for pending items relevant to your current task
+4. **Then**: Search global brain for cross-project patterns and preferences
 5. **Read**: Open specific files only when the title matches your need
 
 ```
-# STEP 1: Read map.md for architecture orientation
-Read ~/.quack/brain/projects/quack-app/map.md
+# STEP 1: Read map.md for architecture orientation (PROJECT BRAIN)
+Read {project}/.quack/brain/map.md
 
 # STEP 2: List project brain files (titles tell you what's inside)
-Glob "~/.quack/brain/projects/quack-app/**/*.md"
+Glob "{project}/.quack/brain/**/*.md"
 
 # STEP 3: Check inbox for pending items
-Glob "~/.quack/brain/projects/quack-app/inbox/*.md"
+Glob "{project}/.quack/brain/inbox/*.md"
 
-# STEP 4: Only if needed, search globally by keyword
-Grep "authentication" ~/.quack/brain/ --glob "*.md"
+# STEP 4: Search global brain for cross-project knowledge
+Glob "~/.quack/brain/global/**/*.md"
+# Or search by keyword:
+Grep "authentication" ~/.quack/brain/global/ --glob "*.md"
 
 # STEP 5: Read only what's relevant based on file name
-Read ~/.quack/brain/projects/quack-app/bugs/fix-white-screen-standby.md
+Read {project}/.quack/brain/bugs/fix-white-screen-standby.md
+# Or from global:
+Read ~/.quack/brain/global/patterns/error-handling-pattern.md
 ```
 
-**Why this order matters**: The map gives you instant orientation. File names are explicit and descriptive (e.g., `fix-white-screen-after-standby.md`, `decision-file-based-brain-over-sqlite.md`). By listing files first, you avoid reading irrelevant content and save context tokens.
+**Why this order matters**: Project-specific knowledge is more relevant to current work. Global brain contains cross-cutting concerns like personal preferences and reusable patterns.
 
 ## Writing Knowledge (SAVE AFTER DISCOVERING)
 
-After solving non-trivial problems, save the knowledge:
+After solving non-trivial problems, save the knowledge to the appropriate brain:
+
+### Where to Save
+
+| Knowledge Type | Location | Example |
+|----------------|----------|---------|
+| **Project-specific** (bugs, decisions, patterns for this project) | `{project}/.quack/brain/` | Fix for this project's auth bug |
+| **Cross-project** (reusable patterns, preferences, people) | `~/.quack/brain/global/` | General React error handling pattern |
 
 ```
-Write ~/.quack/brain/projects/{project}/{type-folder}/{slug}.md
+# Project-specific knowledge
+Write {project}/.quack/brain/{type-folder}/{slug}.md
+
+# Global/personal knowledge
+Write ~/.quack/brain/global/{type-folder}/{slug}.md
 ```
 
 ### What to Save
 
-| Type | Save When | Folder |
-|------|-----------|--------|
-| `bug_fix` | Non-obvious solution found after investigation | `bugs/` |
-| `pattern` | Reusable approach discovered | `patterns/` |
-| `decision` | Significant architectural choice made | `decisions/` |
-| `gotcha` | Pitfall that could trap others | `gotchas/` |
-| `preference` | User style/preference learned | `preferences/` |
+| Type | Save When | Folder | Brain |
+|------|-----------|--------|-------|
+| `bug_fix` | Non-obvious solution found after investigation | `bugs/` | Project |
+| `pattern` | Reusable approach discovered | `patterns/` | Project or Global |
+| `decision` | Significant architectural choice made | `decisions/` | Project |
+| `gotcha` | Pitfall that could trap others | `gotchas/` | Project or Global |
+| `preference` | User style/preference learned | `preferences/` | Global |
+| `person` | Contact or collaborator info | `people/` | Global |
+| `tool` | Tool configuration or tips | `tools/` | Global |
 
 ### Naming Convention
 
@@ -241,10 +277,10 @@ Write brain entries in the same language the user communicates in. The brain is 
 
 ## Diary Entries
 
-For daily progress, append to the diary file:
+For daily progress, append to the project's diary file:
 
 ```
-~/.quack/brain/projects/{project}/diary/YYYY-MM-DD.md
+{project}/.quack/brain/diary/YYYY-MM-DD.md
 ```
 
 Format:
