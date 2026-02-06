@@ -152,6 +152,13 @@
       "description": "Learn any technology from its website or documentation URL and turn it into a reusable Claude skill",
       "version": "1.0.0",
       "tags": ["learning", "documentation", "skill-generator", "web-scraping", "knowledge"]
+    },
+    {
+      "name": "skill-creator",
+      "source": "./plugins/skill-creator",
+      "description": "Meta-skill for creating new Claude skills with proper structure, bundled resources, and packaging scripts",
+      "version": "1.0.0",
+      "tags": ["skill-creation", "meta-skill", "scaffolding", "packaging", "developer-tools"]
     }
   ]
 }

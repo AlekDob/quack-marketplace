@@ -1,0 +1,15 @@
+{
+  "name": "skill-creator",
+  "version": "1.0.0",
+  "description": "Meta-skill for creating new Claude skills with proper structure, YAML frontmatter, bundled resources, and packaging. Includes init, validate, and package scripts.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["skill-creation", "meta-skill", "scaffolding", "packaging", "developer-tools"],
+  "skills": ["skills/skill-creator"],
+  "agents": [],
+  "rules": []
+}
