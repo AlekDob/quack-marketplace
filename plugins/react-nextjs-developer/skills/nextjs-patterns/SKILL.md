@@ -1,6 +1,6 @@
 ---
 name: nextjs-patterns
-description: Next.js 15 App Router patterns, Server Components, Server Actions, and data fetching strategies.
+description: Use this skill when building Next.js pages, choosing between Server and Client Components, implementing Server Actions, setting up data fetching with Suspense, creating API routes, configuring middleware, or optimizing SEO with metadata. Also use when debugging hydration errors or structuring App Router file conventions.
 ---
 
 # Next.js Patterns

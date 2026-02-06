@@ -1,6 +1,6 @@
 ---
 name: quack-architecture
-description: Quack app architecture patterns, multi-agent system, and core domain concepts for contributing to the project.
+description: Use this skill when contributing to the Quack desktop app, understanding the agent vs droid system, navigating the project structure, adding new Tauri commands, creating settings sections, modifying the sidebar accordion, or following Quack's bootstrap sequence and design system conventions.
 ---
 
 # Quack Architecture

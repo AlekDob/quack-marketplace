@@ -1,6 +1,6 @@
 ---
 name: react-tauri-integration
-description: React + Tauri integration patterns for IPC communication, hooks, and desktop-native UI.
+description: Use this skill when connecting React frontend to Tauri Rust backend, creating invoke hooks, listening to events from Rust, implementing window controls, handling file drag and drop, synchronizing state between React and Rust, or building desktop-native UI patterns like title bars and context menus.
 ---
 
 # React + Tauri Integration

@@ -1,6 +1,6 @@
 ---
 name: rust-tauri-commands
-description: Rust command patterns for Tauri apps with serde serialization, error handling, and state management.
+description: Use this skill when writing Rust commands for Tauri, serializing data with serde for JavaScript interop, handling errors with custom types, creating async commands for I/O operations, or accessing Tauri State and AppHandle. Also use when debugging command invocation failures or designing the Rust-to-frontend data contract.
 ---
 
 # Rust Tauri Commands

@@ -1,6 +1,6 @@
 ---
 name: react-best-practices
-description: React 19 best practices, hooks patterns, Server Components, and performance optimization guidelines.
+description: Use this skill when building React components, managing state with hooks, optimizing rendering performance, writing custom hooks, or structuring React 19 applications with TypeScript and Tailwind CSS. Also use when reviewing React code for best practices, fixing re-render issues, or designing component APIs.
 ---
 
 # React Best Practices

@@ -1,6 +1,6 @@
 ---
 name: react-testing
-description: React testing patterns with Vitest, React Testing Library, and component testing best practices.
+description: Use this skill when writing tests for React components, testing hooks with renderHook, testing forms and user interactions, mocking API calls, or setting up Vitest with React Testing Library. Also use when deciding what to test, choosing query selectors, or writing async component tests.
 ---
 
 # React Testing

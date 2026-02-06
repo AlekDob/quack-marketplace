@@ -1,6 +1,6 @@
 ---
 name: tauri-v2-patterns
-description: Tauri 2 application architecture, plugin system, permissions, and desktop app development patterns.
+description: Use this skill when building Tauri 2 desktop applications, defining Tauri commands, setting up the event system between Rust and frontend, configuring permissions and capabilities, integrating Tauri plugins (fs, dialog, shell), or managing app state with Mutex. Also use when debugging IPC issues or structuring a Tauri project.
 ---
 
 # Tauri v2 Patterns
