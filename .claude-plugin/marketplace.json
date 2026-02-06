@@ -124,6 +124,20 @@
       "description": "DevOps & Cloud Engineer agent with Cloudflare Workers, Turborepo, and GitHub Actions",
       "version": "1.0.0",
       "tags": ["devops", "cloudflare", "turborepo", "github-actions", "cloud", "agent-template"]
+    },
+    {
+      "name": "react-nextjs-developer",
+      "source": "./plugins/react-nextjs-developer",
+      "description": "React/Next.js Developer agent with React 19, Next.js 15, TypeScript, Tailwind CSS, and Vitest",
+      "version": "1.0.0",
+      "tags": ["react", "nextjs", "typescript", "tailwind", "frontend", "agent-template"]
+    },
+    {
+      "name": "quack-developer",
+      "source": "./plugins/quack-developer",
+      "description": "Quack Developer agent for Tauri 2 + Rust + React full-stack desktop app development",
+      "version": "1.0.0",
+      "tags": ["tauri", "rust", "react", "desktop", "fullstack", "agent-template"]
     }
   ]
 }
