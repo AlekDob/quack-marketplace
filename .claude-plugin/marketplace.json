@@ -138,6 +138,13 @@
       "description": "Swift/iOS Developer agent with SwiftUI, Swift Concurrency, iOS architecture, and Apple HIG best practices",
       "version": "1.0.0",
       "tags": ["swift", "swiftui", "ios", "apple", "mobile", "agent-template"]
+    },
+    {
+      "name": "openai-image-gen",
+      "source": "./plugins/openai-image-gen",
+      "description": "Generate images using OpenAI's GPT Image API with support for multiple models, sizes, and transparent backgrounds",
+      "version": "1.0.0",
+      "tags": ["openai", "image-generation", "ai-art", "gpt-image", "dall-e"]
     }
   ]
 }

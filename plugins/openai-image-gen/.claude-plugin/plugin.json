@@ -1,0 +1,15 @@
+{
+  "name": "openai-image-gen",
+  "version": "1.0.0",
+  "description": "Generate images using OpenAI's GPT Image API. Supports gpt-image-1.5, gpt-image-1, DALL-E 3/2. Handles prompt optimization, transparent backgrounds, multiple sizes, and quality levels.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["openai", "image-generation", "ai-art", "gpt-image", "dall-e"],
+  "skills": ["skills/openai-image-gen"],
+  "agents": [],
+  "rules": []
+}
