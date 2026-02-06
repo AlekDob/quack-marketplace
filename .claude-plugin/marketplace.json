@@ -145,6 +145,13 @@
       "description": "Generate images using OpenAI's GPT Image API with support for multiple models, sizes, and transparent backgrounds",
       "version": "1.0.0",
       "tags": ["openai", "image-generation", "ai-art", "gpt-image", "dall-e"]
+    },
+    {
+      "name": "learn-from-web",
+      "source": "./plugins/learn-from-web",
+      "description": "Learn any technology from its website or documentation URL and turn it into a reusable Claude skill",
+      "version": "1.0.0",
+      "tags": ["learning", "documentation", "skill-generator", "web-scraping", "knowledge"]
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "learn-from-web",
+  "version": "1.0.0",
+  "description": "Learn any technology from its website or documentation URL and turn it into a reusable Claude skill published to the marketplace.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["learning", "documentation", "skill-generator", "web-scraping", "knowledge"],
+  "skills": ["skills/learn-from-web"],
+  "agents": [],
+  "rules": []
+}
