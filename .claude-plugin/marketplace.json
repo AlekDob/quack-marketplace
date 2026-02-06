@@ -133,11 +133,11 @@
       "tags": ["react", "nextjs", "typescript", "tailwind", "frontend", "agent-template"]
     },
     {
-      "name": "quack-developer",
-      "source": "./plugins/quack-developer",
-      "description": "Quack Developer agent for Tauri 2 + Rust + React full-stack desktop app development",
+      "name": "swift-ios-developer",
+      "source": "./plugins/swift-ios-developer",
+      "description": "Swift/iOS Developer agent with SwiftUI, Swift Concurrency, iOS architecture, and Apple HIG best practices",
       "version": "1.0.0",
-      "tags": ["tauri", "rust", "react", "desktop", "fullstack", "agent-template"]
+      "tags": ["swift", "swiftui", "ios", "apple", "mobile", "agent-template"]
     }
   ]
 }

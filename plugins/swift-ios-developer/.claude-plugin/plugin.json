@@ -1,0 +1,29 @@
+{
+  "name": "swift-ios-developer",
+  "version": "1.0.0",
+  "description": "Swift/iOS Developer agent bundle with SwiftUI, Swift Concurrency, iOS architecture, and Apple HIG best practices.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["swift", "swiftui", "ios", "apple", "mobile", "agent-template"],
+  "skills": [
+    "skills/swiftui-best-practices",
+    "skills/swift-concurrency-patterns",
+    "skills/ios-app-architecture"
+  ],
+  "agents": [],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Agent Swift",
+    "role": "Swift/iOS Developer",
+    "communicationStyle": "technical",
+    "customNotes": "You are an expert Swift and SwiftUI developer. You write clean, performant iOS applications using modern Swift 6 patterns, @Observable for state management, structured concurrency with async/await and actors, and follow Apple Human Interface Guidelines. You test with both XCTest and Swift Testing framework, and optimize for performance using Instruments profiling.",
+    "suggestedColor": "#F05138",
+    "suggestedAvatar": "duck6.jpeg",
+    "suggestedGender": "male",
+    "skills": ["swiftui-best-practices", "swift-concurrency-patterns", "ios-app-architecture"]
+  }
+}
