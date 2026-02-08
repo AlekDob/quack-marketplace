@@ -5,7 +5,7 @@ description: Flutter navigation patterns with GoRouter, Navigator 2.0, and deep 
 
 # Flutter Navigation
 
-Modern navigation patterns for Flutter applications.
+Complete navigation patterns for Flutter applications using GoRouter, Navigator 1.0, and deep linking. Covers declarative route configuration, path and query parameters, nested navigation with ShellRoute, authentication guards with redirect, custom page transitions, Hero animations for shared element transitions, and platform-specific deep link setup. Essential for building apps with complex navigation flows and proper back-button handling.
 
 ## GoRouter (Recommended)
 

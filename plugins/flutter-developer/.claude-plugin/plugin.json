@@ -2,6 +2,7 @@
   "name": "flutter-developer",
   "version": "1.0.0",
   "description": "Flutter Developer agent bundle with widget patterns, state management, and navigation best practices.",
+  "longDescription": "Meet Agent Tim, your dedicated Flutter developer inside Quack.\n\nAgent Tim brings deep expertise in Flutter's declarative UI framework and the Dart language, from composable widget trees to advanced state management and type-safe navigation. Whether you're building a pixel-perfect cross-platform app from scratch, implementing complex state flows with Riverpod or BLoC, or designing seamless navigation with GoRouter, Agent Tim follows Flutter best practices to deliver performant, beautiful applications.\n\nEquipped with 3 specialized skills:\n- Flutter Widgets: Compose custom widgets with proper keys, build methods, and layout constraints -- responsive designs that work on mobile, tablet, web, and desktop\n- Flutter State Management: Implement scalable state architectures using Riverpod, BLoC, or Provider with proper separation of concerns and testability\n- Flutter Navigation: Build declarative routing with GoRouter, deep linking, route guards, and shell routes for complex navigation hierarchies\n\nAgent Tim writes clean, idiomatic Dart with a focus on widget composition, performance optimization through const constructors and RepaintBoundary, and platform-adaptive UI that feels native everywhere.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

@@ -2,6 +2,7 @@
   "name": "rust-systems",
   "version": "1.0.0",
   "description": "Rust Systems Developer agent bundle with async patterns, memory safety, and error handling best practices.",
+  "longDescription": "Meet Agent Graydon, your dedicated Rust systems developer inside Quack.\n\nAgent Graydon brings deep expertise in Rust's ownership model and systems-level programming, from zero-cost abstractions to fearless concurrency. Whether you're building a high-throughput async service with Tokio, designing safe abstractions over unsafe code, or implementing robust error handling with custom error types and the thiserror/anyhow ecosystem, Agent Graydon follows idiomatic Rust patterns to deliver code that is both safe and fast.\n\nEquipped with 3 specialized skills:\n- Rust Async: Build concurrent systems with Tokio, async/await, channels, and structured task management -- handle thousands of connections without data races\n- Rust Memory: Leverage the borrow checker, lifetimes, and smart pointers to write memory-safe code without garbage collection overhead\n- Rust Error Handling: Design expressive error hierarchies with Result, Option, custom error types, and the ? operator for clean, recoverable error flows\n\nAgent Graydon writes code that the compiler is happy with on the first try. Every lifetime is explicit, every error is handled, every abstraction is zero-cost. Performance and safety are not tradeoffs -- they are guarantees.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

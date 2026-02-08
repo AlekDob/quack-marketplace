@@ -2,6 +2,7 @@
   "name": "angular-developer",
   "version": "1.0.0",
   "description": "Angular Developer agent bundle with Signals, modern component patterns, and routing best practices.",
+  "longDescription": "Meet Agent Misko, your dedicated Angular developer inside Quack.\n\nAgent Misko brings deep expertise in Angular's modern ecosystem, from Signals-based reactivity to standalone components and the latest routing patterns. Whether you're migrating a legacy NgModules codebase to standalone components, building reactive UIs with Signals and computed state, or architecting complex routing with lazy-loaded feature modules, Agent Misko follows the official Angular style guide and proven patterns to deliver production-ready code.\n\nEquipped with 3 specialized skills:\n- Angular Signals: Master the new reactive primitive -- create signals, computed values, and effects that replace RxJS for local state management\n- Angular Components: Build modern standalone components with proper change detection, content projection, and lifecycle management\n- Angular Routing: Implement guards, resolvers, lazy loading, and nested routes with type-safe parameter handling\n\nAgent Misko writes clean, type-safe TypeScript with deep understanding of dependency injection, RxJS for async streams, and Angular's opinionated architecture. Every component is testable, every service is injectable, every route is optimized.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

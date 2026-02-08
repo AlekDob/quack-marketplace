@@ -5,7 +5,7 @@ description: Python testing patterns with pytest, fixtures, mocking, and async t
 
 # Python Testing Patterns
 
-Comprehensive testing patterns with pytest.
+Comprehensive testing patterns with pytest for building reliable Python applications. Covers test structure and organization, parametrized tests, fixtures with scopes and factories, mocking with patch and AsyncMock, async test support with pytest-asyncio, FastAPI integration testing with TestClient and dependency overrides, and coverage reporting. A complete toolkit for writing fast, maintainable tests at every layer of your Python stack.
 
 ## Pytest Basics
 

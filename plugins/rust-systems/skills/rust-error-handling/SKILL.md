@@ -5,7 +5,7 @@ description: Rust error handling patterns with Result, Option, and custom error 
 
 # Rust Error Handling
 
-Idiomatic error handling with Result and Option types.
+Idiomatic Rust error handling patterns using Result, Option, and the ? operator for clean error propagation. Covers custom error types with enum variants, thiserror for library errors, anyhow for application errors with context, early return patterns, collecting results from iterators, and fallback value chains. Master the Rust approach to making errors explicit, composable, and impossible to ignore.
 
 ## Result Basics
 

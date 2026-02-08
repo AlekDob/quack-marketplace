@@ -5,7 +5,7 @@ description: Python async/await patterns for concurrent programming with asyncio
 
 # Python Async Patterns
 
-Modern asynchronous programming patterns for Python 3.11+.
+In-depth async/await patterns for concurrent Python programming targeting Python 3.11 and above. Covers asyncio fundamentals, TaskGroups for structured concurrency, async context managers and iterators, synchronization primitives (locks, semaphores, events), timeouts, aiohttp for concurrent HTTP requests, and connection pooling. Essential for writing high-throughput I/O-bound applications without the complexity of threads.
 
 ## Fundamentals
 

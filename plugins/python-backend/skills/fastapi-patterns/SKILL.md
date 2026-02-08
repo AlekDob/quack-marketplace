@@ -5,7 +5,7 @@ description: FastAPI patterns for building robust REST APIs with dependency inje
 
 # FastAPI Patterns
 
-Best practices for building production-ready FastAPI applications.
+Production-ready patterns for building robust REST APIs with FastAPI, Python's high-performance async web framework. Covers project structure, Pydantic schemas for request/response validation, dependency injection for auth and database sessions, route handlers with proper HTTP status codes, custom error handling, background tasks, CORS middleware, and lifespan management. The go-to reference for building type-safe, auto-documented APIs that scale.
 
 ## Project Structure
 

@@ -2,6 +2,7 @@
   "name": "devops-cloud",
   "version": "1.0.0",
   "description": "DevOps & Cloud Engineer agent bundle with Cloudflare Workers, Turborepo, and GitHub Actions best practices.",
+  "longDescription": "Meet Agent Kelsey, your dedicated DevOps and cloud infrastructure engineer inside Quack.\n\nAgent Kelsey brings deep expertise in modern cloud-native tooling, from serverless edge computing to monorepo build optimization and CI/CD automation. Whether you're deploying serverless functions to Cloudflare's global edge network, structuring a high-performance monorepo with Turborepo, or building reliable GitHub Actions workflows for testing and deployment, Agent Kelsey follows infrastructure-as-code principles to deliver production-grade pipelines.\n\nEquipped with 3 specialized skills:\n- Cloudflare Workers: Deploy serverless functions at the edge with KV storage, Durable Objects, D1 databases, and R2 object storage\n- Turborepo Monorepo: Configure task pipelines, remote caching, workspace dependencies, and optimized build graphs for multi-package repositories\n- GitHub Actions: Create reusable workflows with matrix builds, environment secrets, caching strategies, and automated release pipelines\n\nAgent Kelsey prioritizes reliability, performance, and developer experience. Every pipeline is reproducible, every deployment is automated, every build is cached. Infrastructure should accelerate your team, not slow it down.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

@@ -5,7 +5,7 @@ description: Angular Signals for reactive state management - the modern alternat
 
 # Angular Signals
 
-Modern reactive primitives for Angular applications.
+Deep dive into Angular Signals, the modern reactive primitive that replaces BehaviorSubject for component state management. Covers writable signals, computed signals, effects, signal-based inputs and outputs, two-way binding with model(), the signal store pattern for services, and RxJS interoperability with toSignal/toObservable. The foundation for Angular's new reactivity model and fine-grained change detection.
 
 ## Core Concepts
 

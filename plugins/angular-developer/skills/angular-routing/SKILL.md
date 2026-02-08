@@ -5,7 +5,7 @@ description: Angular Router patterns for navigation, guards, resolvers, and lazy
 
 # Angular Routing
 
-Modern routing patterns for Angular applications.
+Complete routing patterns for Angular applications using functional guards, resolvers, and lazy loading with standalone components. Covers route configuration, nested child routes, programmatic navigation, withComponentInputBinding for cleaner param access, and withViewTransitions for animated page changes. Ideal for building scalable navigation architectures with proper authentication and data pre-fetching.
 
 ## Route Configuration
 

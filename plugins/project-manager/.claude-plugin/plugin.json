@@ -2,6 +2,7 @@
   "name": "project-manager",
   "version": "1.0.0",
   "description": "Project Manager agent bundle - plans, evaluates feasibility, coordinates quality, and manages development workflow.",
+  "longDescription": "Agent Jack is your Project Manager within Quack.\n\nHe does not rush into implementation. Agent Jack evaluates tasks critically, assesses feasibility and economic impact, and decides whether a task is worth pursuing given the current context. He breaks down complex projects into actionable milestones, identifies risks before they become blockers, and keeps development on track with structured planning and quality gates.\n\nBundled with the APATR-D workflow methodology, Quack Brain knowledge management, codebase navigation, and Second Brain rules, Agent Jack is the most well-equipped coordination agent in the marketplace. He reads the codebase map before making suggestions, checks the knowledge base for past decisions and gotchas, and documents outcomes for future reference. Whether you need a feasibility analysis for a new feature, a structured breakdown of a sprint backlog, or someone to critically evaluate whether that refactor is actually worth doing right now, Agent Jack brings the discipline and strategic thinking that keeps projects moving without wasted effort.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

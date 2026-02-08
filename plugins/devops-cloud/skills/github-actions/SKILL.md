@@ -5,7 +5,7 @@ description: GitHub Actions patterns for CI/CD pipelines, testing, and deploymen
 
 # GitHub Actions
 
-CI/CD automation with GitHub Actions.
+End-to-end CI/CD pipeline automation with GitHub Actions for testing, building, and deploying applications. Covers workflow configuration, matrix strategies for cross-platform testing, dependency caching, secrets management, job dependencies, artifact handling, reusable workflows, composite actions, and pull request automation. The definitive reference for automating your entire software delivery pipeline on GitHub.
 
 ## Basic Workflow
 

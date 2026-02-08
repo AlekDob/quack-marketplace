@@ -5,7 +5,7 @@ description: Flutter widget composition patterns, custom widgets, and UI best pr
 
 # Flutter Widgets
 
-Expert patterns for building Flutter UI with widgets.
+Expert patterns for building performant Flutter UIs through widget composition, responsive layouts, and custom components. Covers StatelessWidget vs StatefulWidget, LayoutBuilder for responsive design, flex layouts with Row/Column/Expanded, reusable component patterns with theming, const constructors and RepaintBoundary for performance optimization, and proper key usage in lists. The foundation for creating clean, maintainable, and fast Flutter interfaces.
 
 ## Widget Fundamentals
 

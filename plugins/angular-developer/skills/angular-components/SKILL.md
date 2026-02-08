@@ -5,7 +5,7 @@ description: Modern Angular component patterns with standalone components, depen
 
 # Angular Components
 
-Best practices for building modern Angular components.
+Comprehensive patterns for building modern Angular components using standalone architecture, the new control flow syntax, and signal-based inputs. Covers component composition, content projection with named slots, dependency injection with the inject() function, lifecycle hooks including afterRender, and the @if/@for/@switch template syntax. Essential for teams adopting Angular's latest component model.
 
 ## Standalone Components
 

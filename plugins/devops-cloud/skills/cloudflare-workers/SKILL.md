@@ -5,7 +5,7 @@ description: Cloudflare Workers patterns for edge computing, KV storage, and ser
 
 # Cloudflare Workers
 
-Edge computing with Cloudflare Workers.
+Production-ready patterns for building serverless APIs and edge applications with Cloudflare Workers. Covers fetch handlers, KV storage for key-value data, D1 for relational databases, R2 for object storage, Durable Objects for stateful coordination, scheduled cron workers, and wrangler configuration. Perfect for deploying low-latency APIs at the edge with minimal cold starts.
 
 ## Project Setup
 

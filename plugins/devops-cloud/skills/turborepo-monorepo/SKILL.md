@@ -5,7 +5,7 @@ description: Turborepo patterns for monorepo management, caching, and pipeline o
 
 # Turborepo Monorepo
 
-High-performance build system for monorepos.
+Expert guidance for managing monorepos with Turborepo's high-performance build system and intelligent caching. Covers project structure with apps and packages, turbo.json pipeline configuration, internal package setup with workspace dependencies, task dependency graphs, selective inputs for cache optimization, remote caching with Vercel, and CLI filtering for building only affected packages. Critical for scaling multi-package TypeScript projects efficiently.
 
 ## Project Structure
 

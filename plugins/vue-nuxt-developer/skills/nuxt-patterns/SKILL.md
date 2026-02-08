@@ -5,7 +5,7 @@ description: Nuxt 3 patterns for SSR, data fetching, routing, and server-side fu
 
 # Nuxt 3 Patterns
 
-Expert patterns for building Nuxt 3 applications with SSR and hybrid rendering.
+Expert patterns for building full-stack Nuxt 3 applications with SSR, ISR, and hybrid rendering strategies. Covers data fetching with useAsyncData and useFetch, file-based routing with dynamic parameters, route middleware for authentication, server API routes with Nitro, useState for SSR-safe state, Pinia integration, and per-route rendering modes (prerender, SPA, ISR). The complete reference for leveraging Nuxt's auto-imports, server engine, and rendering flexibility.
 
 ## Directory Structure
 ```

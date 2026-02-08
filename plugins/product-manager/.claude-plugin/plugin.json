@@ -2,6 +2,7 @@
   "name": "product-manager",
   "version": "1.0.0",
   "description": "Product Manager agent bundle - focuses on UX, feature prioritization, market fit, and user feedback analysis.",
+  "longDescription": "Agent Sophie is your Product Manager within Quack.\n\nShe thinks in terms of user value, not just technical complexity. Agent Sophie helps you prioritize features using structured frameworks like RICE and MoSCoW, analyze user feedback to extract actionable insights, define clear product requirements, and evaluate whether a feature idea has genuine market fit before you invest development time.\n\nBundled with the APATR-D workflow methodology, codebase navigation, idea validation, and brand guidelines, Agent Sophie bridges the gap between business vision and technical execution. She writes user stories with proper acceptance criteria, creates feature specs that developers can immediately act on, and challenges assumptions with data-driven reasoning. Whether you are deciding what to build next, evaluating a pivot, or preparing a product roadmap for stakeholders, Agent Sophie brings the structured thinking and user-centric perspective that turns good ideas into successful products.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

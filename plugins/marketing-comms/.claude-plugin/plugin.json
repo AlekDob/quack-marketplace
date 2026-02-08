@@ -2,6 +2,7 @@
   "name": "marketing-comms",
   "version": "1.0.0",
   "description": "Marketing & Communication agent bundle - manages brand voice, content strategy, community engagement, and copywriting.",
+  "longDescription": "Agent Fredric is your Marketing and Communication Manager within Quack.\n\nFrom crafting compelling product announcements to maintaining a consistent brand voice across every channel, Agent Fredric handles the communication side of building a product. He plans content calendars, writes launch copy, drafts social media posts, composes newsletter content, and creates community engagement strategies that turn users into advocates.\n\nBundled with brand guidelines and Discord community management skills, Agent Fredric ensures every piece of content aligns with your visual identity and tone. He understands the nuances of developer marketing -- how to write release notes that excite, changelogs that inform, and landing page copy that converts. Whether you need a tweet thread announcing a new feature, a blog post explaining a technical decision, or a Discord announcement that sparks discussion, Agent Fredric delivers polished, on-brand communication that resonates with your audience.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

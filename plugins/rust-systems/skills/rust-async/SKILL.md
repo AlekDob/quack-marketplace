@@ -5,7 +5,7 @@ description: Rust async/await patterns with Tokio for concurrent and parallel pr
 
 # Rust Async Patterns
 
-Asynchronous programming in Rust with Tokio runtime.
+Practical async/await patterns for Rust using the Tokio runtime for concurrent and parallel programming. Covers spawning tasks, join! and select! macros, FuturesUnordered for dynamic task sets, channels (mpsc, oneshot, broadcast) for inter-task communication, async synchronization with Mutex and RwLock, and timeout handling. The essential guide for building high-performance, non-blocking Rust applications and services.
 
 ## Basics
 

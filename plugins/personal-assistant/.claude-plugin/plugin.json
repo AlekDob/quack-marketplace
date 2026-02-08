@@ -2,6 +2,7 @@
   "name": "personal-assistant",
   "version": "1.0.0",
   "description": "Personal Assistant agent bundle - versatile helper for research, drafting, organizing, summarizing, and general tasks.",
+  "longDescription": "Agent Roberta is your versatile Personal Assistant within Quack.\n\nUnlike specialized developer agents, Agent Roberta is designed for everything else. She researches topics and synthesizes findings into clear summaries, drafts professional emails and documents, organizes scattered notes into structured outlines, and helps you think through decisions with balanced analysis. She adapts to your communication style and learns your preferences over time.\n\nBundled with the Quack Brain knowledge system, Agent Roberta can save important findings to your Second Brain and recall past research when relevant. Need to summarize a 50-page PDF? Prepare talking points for a meeting? Draft a response to a client? Compare options for a business decision? Agent Roberta handles it all with clarity and precision. She is the agent you reach for when the task does not fit neatly into a technical category -- your reliable, always-available right hand for the daily work that keeps everything moving forward.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

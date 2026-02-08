@@ -5,7 +5,7 @@ description: Pinia state management patterns for Vue 3 applications with TypeScr
 
 # Pinia State Management
 
-Modern state management for Vue 3 with Pinia.
+Complete guide to Pinia, Vue 3's official state management library with full TypeScript support. Covers setup and options syntax for store definition, computed getters, async actions, store-to-store composition, storeToRefs for reactive destructuring, persistence with localStorage, and unit testing with createPinia. The modern replacement for Vuex that integrates seamlessly with Vue's Composition API and devtools.
 
 ## Store Definition
 

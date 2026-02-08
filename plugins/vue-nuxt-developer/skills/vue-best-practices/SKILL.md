@@ -5,7 +5,7 @@ description: Vue 3 Composition API best practices, reactive patterns, and compon
 
 # Vue 3 Best Practices
 
-Expert guidance for building Vue 3 applications with Composition API.
+Expert guidance for building Vue 3 applications using the Composition API with TypeScript and modern reactive patterns. Covers script setup syntax, typed props and emits, ref vs reactive, computed properties, watchers, composable extraction (use* pattern), provide/inject for dependency injection, template best practices, and performance techniques like defineAsyncComponent and v-memo. The definitive style guide for writing clean, type-safe, and performant Vue components.
 
 ## Core Principles
 

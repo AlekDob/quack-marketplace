@@ -5,7 +5,7 @@ description: Rust ownership, borrowing, and memory management patterns for safe 
 
 # Rust Memory Management
 
-Ownership, borrowing, and lifetimes for memory-safe programming.
+Deep guide to Rust's ownership system, borrowing rules, and lifetime annotations for writing memory-safe code without a garbage collector. Covers ownership transfer and cloning, immutable and mutable references, lifetime elision and explicit annotations, smart pointers (Box, Rc, Arc, RefCell), interior mutability, and Cow for efficient copy-on-write semantics. The key to understanding Rust's core differentiator and writing zero-cost safe abstractions.
 
 ## Ownership Rules
 

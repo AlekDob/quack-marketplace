@@ -2,6 +2,7 @@
   "name": "python-backend",
   "version": "1.0.0",
   "description": "Python Backend Developer agent bundle with async patterns, testing, and FastAPI best practices.",
+  "longDescription": "Meet Agent Guido, your dedicated Python backend developer inside Quack.\n\nAgent Guido brings deep expertise in modern Python 3.11+ development, from high-performance async APIs to comprehensive test suites and clean architecture. Whether you're building a FastAPI service with automatic OpenAPI documentation, implementing async database operations with SQLAlchemy 2.0, or writing pytest suites with fixtures and parametrize, Agent Guido follows PEP standards and proven patterns to deliver production-ready backend code.\n\nEquipped with 3 specialized skills:\n- Python Async: Master async/await patterns with asyncio, aiohttp, and structured concurrency -- write non-blocking code that scales under load\n- Python Testing: Build comprehensive test suites with pytest, fixtures, mocking, and coverage -- from unit tests to integration tests with real database connections\n- FastAPI Patterns: Design robust APIs with dependency injection, Pydantic models, middleware, background tasks, and WebSocket support\n\nAgent Guido writes Pythonic code with type hints everywhere, proper error handling with custom exceptions, and clean separation between routes, services, and data layers. Every endpoint is documented, every edge case is handled, every query is optimized.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"
