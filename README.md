@@ -10,9 +10,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/plugins-22-00D9FF?style=flat-square" alt="22 plugins" />
-  <img src="https://img.shields.io/badge/skills-33-FF6B35?style=flat-square" alt="33 skills" />
-  <img src="https://img.shields.io/badge/agents-12-F7931E?style=flat-square" alt="12 agents" />
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT" />
 </p>
 
@@ -24,11 +21,11 @@ The Quack Store is a curated collection of **skills**, **agent templates**, and 
 
 Think of it like the App Store for your AI development environment:
 
-- **Skills** teach your agents new capabilities (React patterns, testing strategies, image generation)
-- **Agent Templates** spawn pre-configured specialists (a React developer, a project manager, a DevOps engineer)
-- **Rules** define behavioral guidelines that shape how agents work (structured workflows, knowledge management)
+- **Skills** teach your agents new capabilities — from React patterns to image generation
+- **Agent Templates** spawn pre-configured specialists — a React developer, a project manager, a DevOps engineer
+- **Rules** define behavioral guidelines that shape how agents work — structured workflows, knowledge management
 
-Everything installs in one click from the built-in Quack Store — no manual configuration needed.
+Everything installs in one click from the built-in Quack Store. No manual configuration needed.
 
 ---
 
@@ -46,55 +43,46 @@ Install globally (available to all projects) or per-project. Remove anytime.
 
 ---
 
-## Available Plugins
+## What's Inside
+
+The marketplace is constantly growing. Here are some examples of what you'll find:
 
 ### Agent Templates
 
-Pre-configured AI specialists ready to join your team.
+Pre-configured AI specialists ready to join your team. Each comes with bundled skills and a tuned personality.
 
-| Agent | Role | Skills Included |
-|-------|------|-----------------|
-| **Agent Alex** | React/Next.js Developer | React 19, Next.js 15, Vitest |
-| **Agent Evan** | Vue/Nuxt Developer | Vue 3, Nuxt 3, Pinia |
-| **Agent Misko** | Angular Developer | Signals, Components, Routing |
-| **Agent Tim** | Flutter Developer | Widgets, State, Navigation |
-| **Agent Guido** | Python Backend Developer | Async, Testing, FastAPI |
-| **Agent Graydon** | Rust Systems Developer | Async, Memory, Error Handling |
-| **Agent Swift** | Swift/iOS Developer | SwiftUI, Concurrency, HIG |
-| **Agent Kelsey** | DevOps & Cloud Engineer | Cloudflare, Turborepo, GitHub Actions |
-| **Agent Jack** | Project Manager | Planning, Feasibility, Quality |
-| **Agent Sophie** | Product Manager | UX, Prioritization, Market Fit |
-| **Agent Fredric** | Marketing & Comms | Brand Voice, Content, Community |
-| **Agent Roberta** | Personal Assistant | Research, Drafting, Organizing |
+> **Agent Alex** — React/Next.js Developer
+> Comes with React 19, Next.js 15, and Vitest skills. Writes strict TypeScript, styles with Tailwind, and follows modern Server Component patterns.
+
+> **Agent Jack** — Project Manager
+> Bundles the APATR-D workflow, Quack Brain, and Codebase Map. Plans sprints, evaluates feasibility, and coordinates quality across your team.
+
+> **Agent Kelsey** — DevOps & Cloud Engineer
+> Equipped with Cloudflare Workers, Turborepo monorepo, and GitHub Actions skills. Handles CI/CD pipelines, edge deployments, and infrastructure as code.
+
+Other examples: Swift/iOS Developer, Python Backend, Vue/Nuxt, Angular, Flutter, Rust Systems, Product Manager, Marketing & Comms, Personal Assistant.
 
 ### Skills
 
-Standalone capabilities you can assign to any agent.
+Standalone capabilities you can assign to any agent. A few highlights:
 
-| Skill | What It Does |
-|-------|-------------|
-| **Quack Brain** | File-based Second Brain with auto-learn and knowledge management |
-| **Codebase Map** | Auto-generated export index — reduces search calls by 60-80% |
-| **OpenAI Image Gen** | Generate images with GPT Image API (gpt-image-1.5, DALL-E 3) |
-| **Learn from Web** | Turn any documentation URL into a reusable skill |
-| **Skill Creator** | Meta-skill for building and packaging new skills |
-| **Idea Validator** | Brutally honest app idea validation before building |
-| **Brand Guidelines** | Quack's design system with colors, typography, components |
-| **Discord Community** | Server management, engagement strategies, moderation |
-| **Obsidian Markdown** | Create and edit notes with proper Obsidian formatting |
-| **Obsidian Canvas** | Generate visual canvas files mapping concept relationships |
-| **Obsidian Bases** | Work with structured data and database-like views |
-| **Human Test Plan** | Generate manual QA test plans after feature implementation |
+> **Quack Brain** — File-based Second Brain with auto-learn. Your agents remember patterns, bug fixes, and decisions across sessions.
+
+> **OpenAI Image Gen** — Generate images with GPT Image 1.5 or DALL-E 3. Supports transparent backgrounds, multiple sizes, and batch generation.
+
+> **Learn from Web** — Point at any documentation URL and turn it into a reusable Claude skill, published to the marketplace.
+
+Other examples: Codebase Map, Skill Creator, Idea Validator, Brand Guidelines, Discord Community Manager, Obsidian integration suite.
 
 ### Rules
 
-Behavioral guidelines that shape agent workflows.
+Behavioral guidelines that shape agent workflows:
 
-| Rule | Purpose |
-|------|---------|
-| **APATR-D** | Analyze-Plan-Act-Test-Review-Document methodology |
-| **Use Codebase Map** | Read the codebase map before exploratory searches |
-| **Use Quack Brain** | Leverage the Second Brain for context and memory |
+> **APATR-D** — Analyze, Plan, Act, Test, Review, Document. A structured methodology for quality and traceability in every task.
+
+> **Use Codebase Map** — Instructs agents to read the auto-generated export map before exploratory searches, reducing tool calls by 60-80%.
+
+Browse the full and up-to-date catalog directly in the Quack Store inside the app.
 
 ---
 
@@ -122,7 +110,7 @@ quack-marketplace/
 3. Add your skills, agents, or rules as markdown files
 4. Register in `.claude-plugin/marketplace.json`
 
-See the [Skill Creator](plugins/skill-creator) plugin for a meta-skill that guides you through creating new skills with proper structure.
+See the [Skill Creator](plugins/skill-creator) plugin for a meta-skill that guides you through the process.
 
 ### Plugin Types
 
@@ -130,6 +118,9 @@ See the [Skill Creator](plugins/skill-creator) plugin for a meta-skill that guid
 ```json
 {
   "name": "my-skill",
+  "version": "1.0.0",
+  "description": "Short description for the store listing.",
+  "longDescription": "Rich multi-paragraph description shown in the detail view.",
   "skills": ["skills/my-skill"],
   "agents": [],
   "rules": []
@@ -140,10 +131,15 @@ See the [Skill Creator](plugins/skill-creator) plugin for a meta-skill that guid
 ```json
 {
   "name": "my-agent",
+  "version": "1.0.0",
+  "description": "Short description.",
+  "longDescription": "Detailed description of what this agent can do.",
   "skills": ["skills/skill-one", "skills/skill-two"],
   "agentTemplate": {
     "suggestedName": "Agent Name",
     "role": "Role Title",
+    "communicationStyle": "technical",
+    "suggestedColor": "#61DAFB",
     "skills": ["skill-one", "skill-two"]
   }
 }
@@ -153,11 +149,31 @@ See the [Skill Creator](plugins/skill-creator) plugin for a meta-skill that guid
 ```json
 {
   "name": "my-rule",
+  "version": "1.0.0",
+  "description": "Short description.",
+  "longDescription": "Detailed explanation of when and how this rule applies.",
   "skills": [],
   "agents": [],
   "rules": ["rules/my-rule.md"]
 }
 ```
+
+### SKILL.md Format
+
+Each skill file uses YAML frontmatter with a proactive trigger description:
+
+```markdown
+---
+name: my-skill
+description: Use this skill when [specific trigger scenarios].
+---
+
+# My Skill
+
+Content with patterns, examples, and best practices.
+```
+
+The `description` field is critical — it tells the agent when to invoke the skill proactively.
 
 ---
 
