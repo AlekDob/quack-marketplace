@@ -2,6 +2,7 @@
   "name": "brand-guidelines",
   "version": "1.0.0",
   "description": "Quack's design system with UI patterns, colors, typography, and component structures. Based on real implementation.",
+  "longDescription": "Install Quack's official design system as a skill your agents can reference whenever they build UI.\n\nThis skill teaches your agents the exact colors, typography, spacing, glassmorphism patterns, and component structures used across the Quack application. Instead of guessing at styles or producing inconsistent designs, agents with this skill produce components that match the existing UI perfectly -- from sidebar panels and modal dialogs to card layouts and form inputs.\n\nWhether you are building new features, extending existing views, or refactoring old components, the brand guidelines skill ensures visual consistency across your entire codebase. It covers color tokens, dark theme patterns, border radius conventions, shadow styles, and responsive breakpoints derived from the real production implementation.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

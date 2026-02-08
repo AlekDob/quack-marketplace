@@ -2,6 +2,7 @@
   "name": "learn-from-web",
   "version": "1.0.0",
   "description": "Learn any technology from its website or documentation URL and turn it into a reusable Claude skill published to the marketplace.",
+  "longDescription": "Point your agent at any technology's documentation URL and watch it learn the framework, library, or tool -- then package that knowledge into a reusable skill.\n\nThis skill automates the process of reading documentation websites, extracting key patterns, API references, and best practices, and structuring them into a properly formatted Claude skill that any agent can use. Instead of manually writing SKILL.md files by hand, you give a URL and get a ready-to-use skill that captures the essential knowledge.\n\nPerfect for quickly onboarding your agents to new technologies, creating internal skills for proprietary tools, or contributing new skills to the Quack marketplace. The generated skills follow proper structure with YAML frontmatter, organized sections, and practical code examples extracted from the source documentation.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

@@ -2,6 +2,7 @@
   "name": "discord-community-manager",
   "version": "1.0.0",
   "description": "Expert Discord community manager for technical developer communities. Server structure, engagement strategies, moderation, and beta testing coordination.",
+  "longDescription": "Turn your agent into an expert Discord community manager for developer-focused servers.\n\nThis skill covers everything from initial server architecture -- channels, roles, permissions, and onboarding flows -- to ongoing community engagement strategies that keep members active and invested. Your agent will know how to structure feedback channels for beta testing, write welcome messages that set the right tone, plan community events, design role hierarchies that scale, and draft moderation policies that protect your community without stifling conversation.\n\nIdeal for indie developers, startups, and product teams building a Discord community around their app or tool. The skill includes templates for announcements, changelog posts, bug report workflows, and feature request collection that turn casual users into active contributors.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

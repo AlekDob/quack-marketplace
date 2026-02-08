@@ -2,6 +2,7 @@
   "name": "openai-image-gen",
   "version": "1.0.0",
   "description": "Generate images using OpenAI's GPT Image API. Supports gpt-image-1.5, gpt-image-1, DALL-E 3/2. Handles prompt optimization, transparent backgrounds, multiple sizes, and quality levels.",
+  "longDescription": "Give your agent the ability to generate images directly from your Quack workspace using OpenAI's image generation APIs.\n\nThis skill supports the full range of OpenAI image models -- gpt-image-1.5, gpt-image-1, DALL-E 3, and DALL-E 2 -- with intelligent prompt optimization that turns your brief descriptions into detailed, effective prompts. It handles transparent backgrounds for icons and logos, multiple output sizes from thumbnails to high-resolution artwork, and quality levels from draft to production.\n\nWhether you need app icons, placeholder images for UI mockups, social media graphics, or concept art for presentations, this skill lets your agent generate visual assets without leaving the development environment. The agent understands each model's strengths and automatically selects the best parameters for your use case.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

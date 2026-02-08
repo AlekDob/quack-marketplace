@@ -2,6 +2,7 @@
   "name": "idea-validator",
   "version": "1.0.0",
   "description": "Brutally honest validation of app ideas before building. Assesses market viability, demand, feasibility, monetization potential, and interest factor.",
+  "longDescription": "Stop building products nobody wants. This skill gives your agent a structured framework for brutally honest idea validation before you write a single line of code.\n\nYour agent will evaluate app ideas across five critical dimensions: market viability (is there a real market?), demand signals (are people actively looking for this?), technical feasibility (can you actually build it with your resources?), monetization potential (will people pay, and how much?), and interest factor (is this exciting enough to sustain your motivation?). Each dimension gets a clear score with specific reasoning, not vague encouragement.\n\nThe result is a go/no-go recommendation with actionable next steps. Whether you are a solo developer evaluating weekend project ideas or a team deciding where to invest the next quarter, this skill saves you from the most expensive mistake in product development: building something nobody needs.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

@@ -2,6 +2,7 @@
   "name": "apatr-d",
   "version": "1.0.0",
   "description": "Analyze-Plan-Act-Test-Review-Document workflow for quality, traceability, and knowledge retention in development tasks.",
+  "longDescription": "A structured six-phase workflow rule that transforms how your agents approach development tasks.\n\nAPATR-D stands for Analyze, Plan, Act, Test, Review, Document -- six phases that ensure your agent investigates before proposing changes, designs before implementing, tests appropriately, and captures knowledge for the future. Instead of agents jumping straight into code changes and hoping for the best, APATR-D enforces disciplined thinking at every step.\n\nThis rule is especially valuable for complex features, bug investigations, and architectural changes where rushing into implementation leads to rework. It teaches agents to ask specific questions when tasks are ambiguous, create structured todo lists for complex work, reuse existing abstractions instead of reinventing, and document genuine discoveries worth saving. The result is higher quality code, fewer regressions, and a growing knowledge base that makes your entire team smarter over time.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"

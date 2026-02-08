@@ -2,6 +2,7 @@
   "name": "skill-creator",
   "version": "1.0.0",
   "description": "Meta-skill for creating new Claude skills with proper structure, YAML frontmatter, bundled resources, and packaging. Includes init, validate, and package scripts.",
+  "longDescription": "The skill that creates skills. This meta-skill teaches your agent how to author, validate, and package new Claude skills for the Quack marketplace.\n\nYour agent will scaffold new skills with the correct directory structure, write properly formatted SKILL.md files with YAML frontmatter, bundle companion resources, and validate everything against the marketplace spec before publishing. Instead of manually following documentation and hoping the format is right, your agent handles the entire skill creation workflow from idea to publishable package.\n\nIdeal for developers who want to capture their team's expertise as reusable skills, contribute to the Quack marketplace, or create internal skills for proprietary frameworks and tools. The skill includes init, validate, and package scripts that automate the tedious parts so you can focus on the knowledge itself.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"
