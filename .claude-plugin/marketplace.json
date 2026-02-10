@@ -72,9 +72,9 @@
     {
       "name": "marketing-comms",
       "source": "./plugins/marketing-comms",
-      "description": "Marketing & Communication agent - brand voice, content strategy, community",
-      "version": "1.0.0",
-      "tags": ["onboarding", "marketing", "starter", "agent-template"]
+      "description": "Marketing & Communication agent - brand voice, content strategy, community, product marketing, positioning, GTM",
+      "version": "1.1.0",
+      "tags": ["onboarding", "marketing", "starter", "agent-template", "pmm", "positioning", "gtm"]
     },
     {
       "name": "personal-assistant",
