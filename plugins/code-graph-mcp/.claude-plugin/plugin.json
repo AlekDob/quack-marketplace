@@ -10,5 +10,11 @@
   "repository": "https://github.com/entrepeneur4lyf/code-graph-mcp",
   "license": "MIT",
   "keywords": ["mcp", "code-analysis", "ast", "graph", "navigation", "code-intelligence"],
-  "rules": ["rules/use-code-graph.md"]
+  "rules": ["rules/use-code-graph.md"],
+  "mcpServers": {
+    "code-graph-mcp": {
+      "command": "code-graph-mcp",
+      "type": "stdio"
+    }
+  }
 }
