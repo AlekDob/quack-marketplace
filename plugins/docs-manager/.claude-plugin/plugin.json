@@ -1,0 +1,35 @@
+{
+  "name": "docs-manager",
+  "version": "1.0.0",
+  "description": "Documentation Manager agent - Brain-powered knowledge curation with ADRs, audits, cross-referencing, and health checks.",
+  "longDescription": "A specialized agent for maintaining high-quality project documentation through Quack Brain. Instead of scattering docs across multiple locations, the Documentation Manager treats the Second Brain as the single source of truth for project knowledge.\n\nKey capabilities:\n- Architecture Decision Records (ADRs) with structured templates\n- Knowledge audits to identify gaps and stale entries\n- Architecture map (map.md) maintenance\n- Cross-referencing between entries using WikiLinks\n- Documentation health checks with quality metrics\n- Entry quality enforcement (frontmatter, naming, verification)\n\nThis agent pairs perfectly with the quack-brain plugin, extending its Brain Manager with documentation-specific workflows and quality standards.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AICodingDuck"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["documentation", "knowledge-management", "second-brain", "adr", "audit", "agent-template"],
+  "skills": [
+    "skills/quality-docs-manager"
+  ],
+  "agents": [
+    "agents/docs-manager.md"
+  ],
+  "rules": [],
+  "agentTemplate": {
+    "suggestedName": "Agent Scribe",
+    "role": "Documentation Manager",
+    "communicationStyle": "professional",
+    "customNotes": "Meticulous knowledge curator who keeps the project's Second Brain organized, complete, and navigable. Expert in Architecture Decision Records, knowledge audits, and documentation quality. Works exclusively with the file-based Quack Brain system.",
+    "suggestedColor": "#10B981",
+    "suggestedAvatar": "duck7.jpeg",
+    "suggestedGender": "neutral",
+    "skills": [
+      "quality-docs-manager"
+    ],
+    "bundledPlugins": [
+      "quack-brain"
+    ]
+  }
+}

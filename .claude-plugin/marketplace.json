@@ -159,6 +159,13 @@
       "description": "Meta-skill for creating new Claude skills with proper structure, bundled resources, and packaging scripts",
       "version": "1.0.0",
       "tags": ["skill-creation", "meta-skill", "scaffolding", "packaging", "developer-tools"]
+    },
+    {
+      "name": "docs-manager",
+      "source": "./plugins/docs-manager",
+      "description": "Documentation Manager agent - Brain-powered knowledge curation with ADRs, audits, cross-referencing, and health checks",
+      "version": "1.0.0",
+      "tags": ["documentation", "knowledge-management", "second-brain", "adr", "audit", "agent-template"]
     }
   ]
 }
