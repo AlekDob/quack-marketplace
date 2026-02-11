@@ -49,11 +49,11 @@
       "tags": ["second-brain", "knowledge", "rules"]
     },
     {
-      "name": "use-codebase-map",
-      "source": "./plugins/use-codebase-map",
-      "description": "Rule that instructs AI agents to read the auto-generated codebase map before exploratory searches, reducing tool calls by 60-80%",
+      "name": "code-graph-mcp",
+      "source": "./plugins/code-graph-mcp",
+      "description": "AST-powered code graph with definitions, references, caller/callee analysis, and complexity metrics across 25+ languages via MCP server",
       "version": "1.0.0",
-      "tags": ["codebase-map", "navigation", "context-optimization", "rules"]
+      "tags": ["mcp", "code-analysis", "ast", "navigation", "code-intelligence"]
     },
     {
       "name": "project-manager",

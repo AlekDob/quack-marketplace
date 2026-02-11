@@ -1,0 +1,14 @@
+{
+  "name": "code-graph-mcp",
+  "version": "1.0.0",
+  "description": "AST-powered code graph with find_definition, find_references, caller/callee analysis, complexity metrics, and dependency mapping across 25+ languages",
+  "longDescription": "**Code Graph MCP** replaces flat codebase maps with real code intelligence via an MCP server.\n\n### What it does\n- **AST-based parsing** using ast-grep for accurate code understanding\n- **Find definitions** and **references** across your entire codebase\n- **Caller/callee analysis** to understand function relationships\n- **Cyclomatic complexity** analysis with actionable recommendations\n- **Dependency mapping** with circular dependency detection\n- **25+ languages** including TypeScript, JavaScript, Rust, Python, Go, Swift, and more\n\n### Why use it\n- Reduces Claude's exploratory tool calls by 40%+ (fewer Glob/Grep round-trips)\n- Sub-microsecond response times on cached queries\n- Real-time graph updates via file watcher\n- Works across mixed-language codebases (e.g., Tauri: Rust + TypeScript)\n\n### Setup\n```bash\npip install code-graph-mcp ast-grep-py rustworkx\nclaude mcp add code-graph-mcp code-graph-mcp\n```\n\n### Requirements\n- Python 3.10+\n- pip (Python package manager)",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/entrepeneur4lyf/code-graph-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "code-analysis", "ast", "graph", "navigation", "code-intelligence"],
+  "rules": ["rules/use-code-graph.md"]
+}
