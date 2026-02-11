@@ -166,6 +166,20 @@
       "description": "Documentation Manager agent - Brain-powered knowledge curation with ADRs, audits, cross-referencing, and health checks",
       "version": "1.0.0",
       "tags": ["documentation", "knowledge-management", "second-brain", "adr", "audit", "agent-template"]
+    },
+    {
+      "name": "delegation-rule",
+      "source": "./plugins/delegation-rule",
+      "description": "Structured decision tree for Agent Teams vs Subagents vs single-agent execution",
+      "version": "1.0.0",
+      "tags": ["delegation", "teams", "subagents", "workflow", "coordination"]
+    },
+    {
+      "name": "pdf-toolkit",
+      "source": "./plugins/pdf-toolkit",
+      "description": "Complete PDF manipulation toolkit - extract text/tables, create documents, merge/split, fill forms, OCR, and CLI tools",
+      "version": "1.0.0",
+      "tags": ["pdf", "document", "extraction", "ocr", "reportlab", "forms"]
     }
   ]
 }

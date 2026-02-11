@@ -1,0 +1,15 @@
+{
+  "name": "pdf-toolkit",
+  "version": "1.0.0",
+  "description": "Complete PDF manipulation toolkit - extract text/tables, create documents, merge/split, fill forms, OCR, watermarks, and CLI tools.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["pdf", "document", "extraction", "reportlab", "pypdf", "pdf-lib", "ocr"],
+  "skills": ["skills/pdf-toolkit"],
+  "agents": [],
+  "rules": []
+}
