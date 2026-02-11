@@ -26,7 +26,10 @@
     "suggestedAvatar": "duck7.jpeg",
     "suggestedGender": "neutral",
     "skills": [
-      "quality-docs-manager"
+      "quality-docs-manager",
+      "quack-brain",
+      "codebase-map",
+      "human-test-plan"
     ],
     "bundledPlugins": [
       "quack-brain"
