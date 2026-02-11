@@ -1,0 +1,16 @@
+{
+  "name": "delegation-rule",
+  "version": "1.0.0",
+  "description": "Structured decision tree for choosing between Agent Teams, Subagents/Droids, and single-agent execution before implementing any task.",
+  "longDescription": "A delegation decision rule that forces agents to evaluate the right level of parallelism before starting any implementation.\n\nWithout this rule, agents default to doing everything themselves -- even when a task would benefit from parallel work across a team, or when a focused subagent would be more efficient. This rule introduces a mandatory checkpoint: before writing any code, the agent must classify the task into one of three delegation levels.\n\nLevel 1 (Agent Team) is for multi-domain work where files don't overlap and subtasks can run in parallel. Level 2 (Subagent/Droid) is for focused, single-domain tasks where the result just needs to come back to the caller. Level 3 (Single Agent) is for small, interconnected fixes where coordination overhead would exceed execution time.\n\nThe agent must declare its choice and reasoning before proceeding, making delegation decisions transparent and reviewable. This prevents both under-delegation (doing everything solo) and over-delegation (spawning teams for trivial tasks).",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["delegation", "teams", "subagents", "workflow", "coordination"],
+  "skills": [],
+  "agents": [],
+  "rules": ["rules/delegation-rule.md"]
+}
