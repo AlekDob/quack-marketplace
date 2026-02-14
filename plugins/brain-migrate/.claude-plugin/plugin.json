@@ -1,0 +1,18 @@
+{
+  "name": "brain-migrate",
+  "version": "1.0.0",
+  "description": "Migrate existing documentation into Quack Brain v2 format (documentation/ + guide/) with automatic classification, Mermaid diagram conversion, and CLAUDE.md integration.",
+  "longDescription": "Brain Migrate automates the conversion of any project's existing documentation into the Quack Brain v2 structure.\n\nIt scans multiple source locations (.quack/brain/, .claude/docs/, loose markdown, docs/ folders), classifies each file by type (bug fix, pattern, decision, gotcha, guide), determines audience (AI vs human), and presents a migration plan before executing.\n\nKey features:\n- Automatic type classification based on filenames, frontmatter, and content\n- Human guide detection and conversion with beginner-friendly writing style\n- Mermaid diagram (.mmd) support — converts existing diagrams to Mermaid format\n- CLAUDE.md Knowledge Base section auto-update\n- Safe migration with user approval at each step\n- Inbox safety net for unclassifiable files\n\nRequires the quack-brain plugin for the target structure definition.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AICodingDuck"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["migration", "documentation", "brain", "second-brain", "markdown", "mermaid"],
+  "skills": [
+    "skills/brain-migrate"
+  ],
+  "agents": [],
+  "rules": []
+}

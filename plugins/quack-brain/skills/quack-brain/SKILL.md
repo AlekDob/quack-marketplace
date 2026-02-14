@@ -1,307 +1,197 @@
 ---
 name: quack-brain
-description: Read, write, and search the user's file-based Second Brain knowledge store. Activates when tasks involve learning from past solutions, saving discoveries, or needing project context.
+description: Read, write, and search the two-level Second Brain knowledge store. Use this skill when tasks involve learning from past solutions, saving discoveries, managing Mermaid diagrams, or needing project context.
 context: fork
 ---
 
-# Quack Brain - Two-Level Second Brain
+# Quack Brain
 
-Quack Brain uses a **two-level architecture**:
-
-1. **Project Brain** (`{project}/.quack/brain/`) - Project-specific knowledge, shareable with team
-2. **Global Brain** (`~/.quack/brain/global/`) - Personal knowledge, cross-project patterns, preferences
+Two-level file-based knowledge store. No database, pure markdown + Mermaid diagrams.
 
 ## Structure
 
-### Project Brain (per-project, shareable)
-
-Located in each project's root directory:
-
+**Global Brain** (`~/.quack/brain/`) — personal, cross-project:
 ```
-{project}/.quack/brain/
-├── patterns/          # Project-specific patterns
-├── bugs/              # Bug fixes and solutions
-├── decisions/         # Architecture Decision Records (ADRs)
-├── gotchas/           # Pitfalls and workarounds
-├── diary/             # Daily progress log
-├── inbox/             # Quick ideas & todos (mobile-first)
-└── map.md             # Architecture map & glossary
+patterns/ preferences/ people/ tools/ diary/
 ```
 
-**Note:** Project brain should NOT be gitignored - it's meant to be shared with your team.
-
-### Global Brain (personal, cross-project)
-
-Located at `~/.quack/brain/global/`:
-
+**Project Documentation** (`{project}/documentation/`) — per-project, git-trackable:
 ```
-~/.quack/brain/global/
-├── patterns/          # Reusable code patterns across projects
-├── preferences/       # Personal preferences and style
-├── people/            # Contacts and collaborators
-└── tools/             # Tool configs and tips
+decisions/ bugs/ patterns/ gotchas/ diary/ inbox/ guide/ map.md
 ```
 
-## Migration from Old Structure
-
-If you have existing files in `~/.quack/brain/projects/{project-name}/`, migrate them:
-
-```bash
-# For each project, copy brain files to project directory
-cp -r ~/.quack/brain/projects/{project-name}/* {project}/.quack/brain/
-
-# After verifying migration, clean up old location
-rm -rf ~/.quack/brain/projects/
+**Human Guides** (`{project}/documentation/guide/{feature}/`) — narrative docs for humans:
+```
+guide/
+├── brain/          # How the Brain works
+│   ├── overview.md
+│   ├── access-chain.md
+│   ├── entry-types.md
+│   ├── brain-ui.md
+│   └── writing-entries.md
+└── {feature}/      # One folder per feature
 ```
 
-## File Format
+## Reading (SEARCH BEFORE ACTING)
 
-Each knowledge file uses YAML frontmatter + markdown:
+Access chain: CLAUDE.md references -> project `documentation/` -> global `~/.quack/brain/`.
 
+1. Check CLAUDE.md's Knowledge Base section for linked entries (always loaded)
+2. Read `{project}/documentation/map.md` for architecture orientation
+3. List `{project}/documentation/**/*.md` — titles are self-descriptive
+4. Search `~/.quack/brain/` for cross-project patterns
+
+## Writing (SAVE AFTER DISCOVERING)
+
+**File format**: YAML frontmatter + markdown body.
 ```markdown
 ---
 type: bug_fix
 project: quack-app
-created: 2025-01-23
-tags: [react, hooks, memory-leak]
+created: 2026-02-13
+last_verified: 2026-02-13
+tags: [react, hooks]
 ---
-
-# useEffect cleanup with async operations
-
+# Fix: Description
 ## Problem
-Memory leak when component unmounts during async fetch.
-
 ## Solution
-\```typescript
-useEffect(() => {
-  const controller = new AbortController();
-  fetchData({ signal: controller.signal });
-  return () => controller.abort();
-}, []);
-\```
-
-## Context
-Found in ChatView.tsx during streaming refactor.
+## Key Insight
 ```
 
-## Inbox (Mobile-First Ideas)
+**Staleness**: `last_verified` tracks when content was last confirmed accurate. Entries with `last_verified` older than 3 months or referencing specific line numbers should be re-verified or removed.
 
-The `inbox/` folder is a lightweight capture point for quick ideas, todos, and notes — designed for mobile use via **Obsidian Sync** (iPhone → Mac).
+**Where to save**:
+| Type | Folder | Location |
+|------|--------|----------|
+| bug_fix / bug | bugs/ | Project |
+| pattern | patterns/ | Project or Global |
+| decision | decisions/ | Project |
+| gotcha | gotchas/ | Project or Global |
+| diagram (.mmd) | Any folder or guide/{feature}/ | Project or Global |
+| preference | preferences/ | Global |
+| person | people/ | Global |
+| tool | tools/ | Global |
 
-### Format
+**Naming**: explicit, self-descriptive kebab-case.
+Good: `fix-stamina-bar-prompt-caching.md`
+Bad: `bug-fix-1.md`
 
-```markdown
----
-type: inbox
-created: 2026-01-24
----
+## Mermaid Diagrams (.mmd)
 
-# Quick idea or todo title
+Mermaid diagrams (`.mmd` files) are supported alongside `.md` files. They are rendered visually in the Brain UI.
 
-Brief description. Can be rough, incomplete, stream-of-consciousness.
-- action item 1
-- action item 2
+**Format**: Plain Mermaid syntax, no frontmatter needed.
+```mermaid
+graph TD
+    A[User Input] --> B[Claude SDK]
+    B --> C[stream-claude.js]
+    C --> D[Rust Parser]
+    D --> E[Tauri Event]
 ```
 
-### Rules
+**When to create a diagram**:
+- Architecture flows (data pipelines, component relationships)
+- State machines (process states and transitions)
+- Sequence diagrams (API call chains, auth flows)
+- ER diagrams (entity relationships)
 
-- **Minimal frontmatter**: Only `type: inbox` and `created`. No tags, no project field needed.
-- **Short file names**: Can be less descriptive than knowledge files (e.g., `idea-new-shortcut.md`, `todo-fix-sidebar.md`)
-- **Ephemeral**: Inbox items are meant to be processed and either promoted to proper knowledge files or deleted.
-- **No strict format**: Content can be bullet points, sentences, even just a title. Mobile-first means low friction.
+**Naming**: descriptive kebab-case with `.mmd` extension. Example: `architecture-token-flow.mmd`
 
-### Agent Behavior
+**Where**: anywhere in `documentation/` or `guide/{feature}/`. Diagrams in guide folders appear in the sidebar with `[Diagram]` prefix.
 
-- When starting work on a project, **check inbox/** for pending items that might be relevant to the current task.
-- If an inbox item is actionable and relates to your current work, address it.
-- After processing an inbox item, either delete it or promote it to the appropriate folder (bugs/, patterns/, etc.).
-- Do NOT auto-process all inbox items — only those relevant to the current context.
+**Audience**: both. Humans see the rendered visual, AI reads the Mermaid syntax directly.
 
-## Map (Architecture Glossary)
+## Code References (Brain Breadcrumbs)
 
-Each project can have a `map.md` file — a single document that serves as an **architecture glossary** and navigation guide. It helps the agent quickly understand where components live without needing to grep the entire codebase.
+When writing or modifying code related to a Brain entry, **always leave a comment linking back to the entry**. This creates a two-way connection: Brain → code (via "Related Files" in the entry) and code → Brain (via inline comments).
 
-### Format
+**Format**: `// Brain: {slug}` — where `{slug}` is the entry filename without extension.
 
-```markdown
----
-type: map
-project: quack-app
-updated: 2026-01-24
----
-
-# Architecture Map
-
-## Core Services
-| Component | Path | Purpose |
-|-----------|------|---------|
-| Claude SDK | src/services/claudeSDK.ts | AI streaming & tool execution |
-| Brain Service | src/services/brainFileService.ts | Second Brain file operations |
-| Agent Storage | src/services/unifiedAgentStorage.ts | Agent CRUD |
-
-## Key Stores
-| Store | Path | Purpose |
-|-------|------|---------|
-| Session | src/stores/sessionStore.ts | Active sessions state |
-| Kanban | src/stores/kanbanStore.ts | Task management |
-
-## Feature Directories
-| Feature | Path | Key Files |
-|---------|------|-----------|
-| Chat | src/components/Chat* | ChatView, ChatInput, ChatMessage |
-| Kanban | src/components/kanban/ | KanbanView, KanbanCard |
-
-## Conventions
-- Absolute imports via `@/`
-- Stores use Zustand
-- Services are singleton modules
+```typescript
+// Brain: fix-stamina-bar-prompt-caching
+const realInputTokens = usage.input_tokens
+  + (usage.cache_read_input_tokens ?? 0)
+  + (usage.cache_creation_input_tokens ?? 0);
 ```
 
-### Rules
-
-- **One file per project**: `map.md` at the project root in the brain.
-- **Keep updated**: When significant components are added/moved/removed, update the map.
-- **Concise**: Tables preferred over prose. The map should be scannable, not verbose.
-- **No code**: This is a reference, not documentation. Just names, paths, and one-line purposes.
-
-### Agent Behavior
-
-- **Read map.md FIRST** when you need to find where something lives in the project.
-- Before doing a broad Grep across the codebase, check if the map already tells you where to look.
-- After creating significant new components or refactoring, update the map.
-
-## Reading Knowledge (SEARCH BEFORE ACTING)
-
-Before starting complex tasks, search for relevant past knowledge. Follow this **priority order**:
-
-### Search Priority: Project Brain → Global Brain
-
-1. **First**: Read project's `map.md` for architecture orientation
-2. **Then**: List files in project brain — file names are designed to be self-explanatory
-3. **Then**: Check project's `inbox/` for pending items relevant to your current task
-4. **Then**: Search global brain for cross-project patterns and preferences
-5. **Read**: Open specific files only when the title matches your need
-
-```
-# STEP 1: Read map.md for architecture orientation (PROJECT BRAIN)
-Read {project}/.quack/brain/map.md
-
-# STEP 2: List project brain files (titles tell you what's inside)
-Glob "{project}/.quack/brain/**/*.md"
-
-# STEP 3: Check inbox for pending items
-Glob "{project}/.quack/brain/inbox/*.md"
-
-# STEP 4: Search global brain for cross-project knowledge
-Glob "~/.quack/brain/global/**/*.md"
-# Or search by keyword:
-Grep "authentication" ~/.quack/brain/global/ --glob "*.md"
-
-# STEP 5: Read only what's relevant based on file name
-Read {project}/.quack/brain/bugs/fix-white-screen-standby.md
-# Or from global:
-Read ~/.quack/brain/global/patterns/error-handling-pattern.md
+```rust
+// Brain: gotcha-tauri-execute-command-parsing
+let args: Vec<&str> = command_parts.iter().map(|s| s.as_str()).collect();
 ```
 
-**Why this order matters**: Project-specific knowledge is more relevant to current work. Global brain contains cross-cutting concerns like personal preferences and reusable patterns.
+**When to add a Brain comment**:
+- Fixing a bug documented in `bugs/` — reference the bug entry
+- Implementing a pattern from `patterns/` — reference the pattern
+- Working around a gotcha from `gotchas/` — reference the gotcha
+- Code whose logic is non-obvious and explained in a Brain entry
 
-## Writing Knowledge (SAVE AFTER DISCOVERING)
+**When NOT to add a Brain comment**:
+- Trivial code that needs no explanation
+- Code unrelated to any Brain entry
+- Temporary debug code
 
-After solving non-trivial problems, save the knowledge to the appropriate brain:
+**Rules**:
+1. One comment per relevant section, not per line
+2. Place it above the relevant code block, not inline
+3. If multiple entries are relevant, list them: `// Brain: fix-foo, pattern-bar`
+4. Keep the slug exact — it's a lookup key for both humans and AI
 
-### Where to Save
+## Diary (max 30 lines/day)
 
-| Knowledge Type | Location | Example |
-|----------------|----------|---------|
-| **Project-specific** (bugs, decisions, patterns for this project) | `{project}/.quack/brain/` | Fix for this project's auth bug |
-| **Cross-project** (reusable patterns, preferences, people) | `~/.quack/brain/global/` | General React error handling pattern |
-
-```
-# Project-specific knowledge
-Write {project}/.quack/brain/{type-folder}/{slug}.md
-
-# Global/personal knowledge
-Write ~/.quack/brain/global/{type-folder}/{slug}.md
-```
-
-### What to Save
-
-| Type | Save When | Folder | Brain |
-|------|-----------|--------|-------|
-| `bug_fix` | Non-obvious solution found after investigation | `bugs/` | Project |
-| `pattern` | Reusable approach discovered | `patterns/` | Project or Global |
-| `decision` | Significant architectural choice made | `decisions/` | Project |
-| `gotcha` | Pitfall that could trap others | `gotchas/` | Project or Global |
-| `preference` | User style/preference learned | `preferences/` | Global |
-| `person` | Contact or collaborator info | `people/` | Global |
-| `tool` | Tool configuration or tips | `tools/` | Global |
-
-### Naming Convention
-
-File names MUST be **explicit and self-descriptive**. Someone should understand the content from the title alone, without opening the file. This is critical for efficient brain search.
-
-**Good** (descriptive, tells you what's inside):
-- `fix-white-screen-after-standby.md`
-- `pattern-error-boundary-per-provider.md`
-- `decision-file-based-brain-over-sqlite.md`
-- `gotcha-tauri-shell-plugin-limitations.md`
-
-**Bad** (vague, requires reading to understand):
-- `bug-fix-1.md`
-- `pattern-react.md`
-- `note-2026-01-23.md`
-- `important.md`
-
-## Auto-Evaluation: When to Save Knowledge
-
-After completing any significant task, evaluate whether you produced extractable knowledge. Ask yourself:
-
-1. **Was this a genuine discovery?** (not just a docs lookup or trivial fix)
-2. **Would this help someone hitting the same problem in 6 months?**
-3. **Is the solution verified to work?** (not speculative)
-4. **Does it have clear trigger conditions?** (when would someone need this?)
-
-If ALL four are true, save it to the brain using Write. If any is false, don't save.
-
-### What NOT to Save
-
-- Trivial fixes (typos, missing imports, simple config)
-- Information easily found in official documentation
-- Temporary debugging notes
-- Anything already in the project's README/docs
-- Solutions that only apply to this one specific case
-
-### Language
-
-Write brain entries in the same language the user communicates in. The brain is for humans too - use the language they understand best.
-
-## Diary Entries
-
-For daily progress, append to the project's diary file:
-
-```
-{project}/.quack/brain/diary/YYYY-MM-DD.md
-```
-
-Format:
 ```markdown
 ---
 type: diary
 project: quack-app
-date: 2025-01-23
+date: 2026-02-13
 ---
-
-## Resolved authentication token refresh issue
-
-The problem was stale tokens persisting across app restarts. Fixed by clearing token cache on wake event.
-
-## Implemented new file-based brain system
-
-Replacing SQLite MCP server. Removed ~10K LOC.
+- Fixed stamina bar: prompt caching makes input_tokens misleading
+- Added custom IDE support via native file picker
 ```
 
-**IMPORTANT: NO TAGS in diary entries.** Diary files use only `type` and `date` in frontmatter. Do NOT add `tags: [...]` — diary is temporal, not categorical. Tags are for knowledge files (bugs, patterns, decisions, gotchas) only.
+Each bullet = WHAT + KEY INSIGHT. Details go in bugs/ or patterns/.
+NO tags in diary frontmatter.
 
-## Integration with Obsidian
+## Save Criteria
 
-If the user has Obsidian configured, `~/.quack/brain/` can be symlinked into their vault for visual editing and graph exploration. The markdown format is fully Obsidian-compatible including WikiLinks `[[note-name]]`.
+Before saving, all 4 must be true:
+1. Genuine discovery? (not docs lookup)
+2. Useful in 6 months?
+3. Solution verified?
+4. Clear trigger conditions?
+
+Write in the user's language.
+
+## Human Guides
+
+Feature-oriented narrative documentation for humans, shown in Brain UI under "Human Guides".
+
+**Location**: `{project}/documentation/guide/{feature}/`
+
+**When to create/update a guide**:
+- A new major feature is implemented
+- Existing guide content is outdated after significant changes
+- User explicitly requests documentation
+
+**Format**: Plain markdown (no YAML frontmatter). First `# Heading` becomes the page title in the sidebar.
+
+**Naming**: kebab-case filenames. `overview.md` and `getting-started.md` sort first automatically.
+
+**Language**: Write in the user's language.
+
+Guides are NOT the same as AI Knowledge entries. They are narrative, tutorial-style, and designed for humans reading in sequence.
+
+**Writing style for guides — CRITICAL:**
+- Write for **complete beginners** ("for dummies" level). Assume the reader knows nothing about the feature.
+- Use a **storytelling, conversational tone**. Not a dry manual — more like explaining to a friend over coffee.
+- Start each page with **WHY it exists** before HOW it works. Context first, details second.
+- Use **concrete examples** from the actual project, not abstract descriptions.
+- Use analogies and metaphors to explain technical concepts (e.g. "the Access Chain works like a library — first you check the index, then the shelves, then the archive").
+- **Short paragraphs** (2-3 sentences max). Walls of text = nobody reads.
+- **Tables and lists** for quick reference, but always preceded by a narrative explanation.
+- Avoid jargon. If a technical term is needed, explain it in parentheses the first time.
+- Each page should be **self-contained** — readable on its own, but with links to related pages for depth.
+- **Include at least one `.mmd` diagram per guide feature.** A visual architecture flow makes complex features instantly understandable. Place it alongside the markdown pages (e.g. `architecture-flow.mmd`, `data-flow.mmd`). It renders as a clickable visual diagram in the Brain UI.
+
+## Migration
+
+To convert existing documentation (from `.quack/brain/`, `.claude/docs/`, loose markdown, etc.) into the Quack Brain v2 structure, use the `brain-migrate` skill. It handles scanning, classifying, planning, and executing the migration with user approval at each step.

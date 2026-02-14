@@ -1,7 +1,7 @@
 {
   "name": "use-quack-brain",
-  "version": "1.0.0",
-  "description": "Rule for using Quack Brain as a file-based Second Brain knowledge store with auto-learn capabilities.",
+  "version": "2.0.0",
+  "description": "Rule for using Quack Brain with Access Chain, knowledge management, and code breadcrumbs.",
   "longDescription": "A behavioral rule that teaches your agents to actively use the Quack Brain knowledge store instead of treating it as passive storage.\n\nWith this rule installed, agents will search the project brain and global brain during their analysis phase before starting work, looking for past bug fixes, architectural decisions, and patterns that might be relevant. After completing tasks, agents self-evaluate whether they produced knowledge worth saving and file it in the appropriate category with proper frontmatter and self-descriptive file names.\n\nThis rule defines the two-level brain architecture (project-specific knowledge that is shareable with teams, and global personal knowledge that spans projects), the search priority order, inbox processing for mobile-captured ideas, and the auto-evaluation criteria for deciding what to save. It turns your agents from stateless workers into knowledge-accumulating team members who get smarter with every task.",
   "author": {
     "name": "Quack Team",

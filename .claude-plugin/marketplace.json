@@ -9,9 +9,9 @@
     {
       "name": "quack-brain",
       "source": "./plugins/quack-brain",
-      "description": "Complete Second Brain system with file-based knowledge, Obsidian integration, and auto-learn capabilities",
-      "version": "2.0.0",
-      "tags": ["productivity", "knowledge", "obsidian", "second-brain"]
+      "description": "Complete Second Brain system with file-based knowledge, Mermaid diagrams, code breadcrumbs, Human Guides, and Obsidian integration",
+      "version": "3.0.0",
+      "tags": ["productivity", "knowledge", "obsidian", "second-brain", "mermaid", "documentation"]
     },
     {
       "name": "idea-validator",
@@ -44,9 +44,9 @@
     {
       "name": "use-quack-brain",
       "source": "./plugins/use-quack-brain",
-      "description": "Rule for using Quack Brain as a file-based Second Brain",
-      "version": "1.0.0",
-      "tags": ["second-brain", "knowledge", "rules"]
+      "description": "Rule for using Quack Brain with Access Chain, knowledge management, and code breadcrumbs",
+      "version": "2.0.0",
+      "tags": ["second-brain", "knowledge", "rules", "breadcrumbs"]
     },
     {
       "name": "code-graph-mcp",
@@ -180,6 +180,13 @@
       "description": "Complete PDF manipulation toolkit - extract text/tables, create documents, merge/split, fill forms, OCR, and CLI tools",
       "version": "1.0.0",
       "tags": ["pdf", "document", "extraction", "ocr", "reportlab", "forms"]
+    },
+    {
+      "name": "brain-migrate",
+      "source": "./plugins/brain-migrate",
+      "description": "Migrate existing documentation into Quack Brain v2 format with automatic classification, Mermaid conversion, and CLAUDE.md integration",
+      "version": "1.0.0",
+      "tags": ["migration", "documentation", "brain", "second-brain", "mermaid"]
     }
   ]
 }

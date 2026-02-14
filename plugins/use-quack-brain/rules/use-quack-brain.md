@@ -1,71 +1,20 @@
 ---
-description: "Use Quack Brain as Second Brain - two-level knowledge storage"
+description: "Use Quack Brain for knowledge management"
 ---
 
-# Quack Brain - Two-Level Second Brain
+# Quack Brain
 
-File-based knowledge store using markdown files with YAML frontmatter.
+Two-level knowledge store. Use the `quack-brain` skill for detailed instructions.
 
-## Architecture
+## Access Chain
 
-Two levels of knowledge storage:
+1. **CLAUDE.md** — always loaded. Contains links to `documentation/map.md` and critical gotchas.
+2. **documentation/** — project knowledge. Read files linked from CLAUDE.md first.
+3. **~/.quack/brain/** — global cross-project knowledge. Search when project docs don't cover it.
 
-1. **Project Brain** (`{project}/.quack/brain/`) - Project-specific, shareable with team
-2. **Global Brain** (`~/.quack/brain/global/`) - Personal, cross-project patterns
+## Rules
 
-## When to SEARCH Brain
-
-- Before answering questions you're unsure about
-- When investigating bugs or issues
-- When making architectural decisions
-- When user asks about past work or decisions
-
-## Search Priority: Project → Global
-
-1. Read project's `map.md` for architecture orientation
-2. List project brain files (titles are self-descriptive)
-3. Check project's `inbox/` for pending items
-4. Search global brain for cross-project patterns
-5. Read specific files matching your need
-
-## When to SAVE to Brain
-
-**Project Brain** (`{project}/.quack/brain/`):
-- Bug fixes specific to this project
-- Architecture decisions for this project
-- Project-specific patterns and gotchas
-
-**Global Brain** (`~/.quack/brain/global/`):
-- Reusable patterns across projects
-- Personal preferences and style
-- People and contacts
-- Tool configurations
-
-## Auto-Evaluation
-
-After significant tasks, evaluate:
-1. Genuine discovery? (not docs lookup)
-2. Would help in 6 months?
-3. Solution verified?
-4. Clear trigger conditions?
-
-All true -> save. Any false -> don't save.
-
-## Directory Structure
-
-```
-{project}/.quack/brain/        # Project-specific (shareable)
-├── patterns/
-├── bugs/
-├── decisions/
-├── gotchas/
-├── diary/
-├── inbox/
-└── map.md
-
-~/.quack/brain/global/         # Personal (cross-project)
-├── patterns/
-├── preferences/
-├── people/
-└── tools/
-```
+1. **SEARCH before acting**: CLAUDE.md references -> project `documentation/` -> global `~/.quack/brain/`
+2. **SAVE after discovering**: all 4 must be true — genuine discovery + useful in 6 months + verified + clear trigger
+3. **LINK critical entries**: when saving a gotcha or pattern that agents should always see, add a reference in the project's CLAUDE.md Knowledge Base section
+4. **BREADCRUMB in code**: when writing code related to a Brain entry (bug fix, pattern, gotcha), add `// Brain: {slug}` above the relevant block. This links code back to its documentation. See `quack-brain` skill for full rules.
