@@ -144,12 +144,14 @@ type: diary
 project: quack-app
 date: 2026-02-13
 ---
-- Fixed stamina bar: prompt caching makes input_tokens misleading
-- Added custom IDE support via native file picker
+- [14:30] (Alek) Fixed stamina bar: prompt caching makes input_tokens misleading
+- [15:45] (Alek) Added custom IDE support via native file picker
 ```
 
-Each bullet = WHAT + KEY INSIGHT. Details go in bugs/ or patterns/.
-NO tags in diary frontmatter.
+**Bullet format**: `- [HH:MM] (Author) WHAT + KEY INSIGHT`
+- **Time**: Run `date +%H:%M` to get the user's local time. NEVER guess or invent a time.
+- **Author**: the user's name from CLAUDE.md (`**Name**: ...`). If not found, use "Human"
+- Details go in bugs/ or patterns/. NO tags in diary frontmatter.
 
 ## Save Criteria
 
