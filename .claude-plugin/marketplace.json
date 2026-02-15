@@ -194,6 +194,13 @@
       "description": "Browser automation CLI for AI agents - navigate pages, fill forms, click buttons, take screenshots, extract data, and automate any browser task via Playwright",
       "version": "1.1.0",
       "tags": ["browser", "automation", "playwright", "scraping", "testing", "web"]
+    },
+    {
+      "name": "medium-writer",
+      "source": "./plugins/medium-writer",
+      "description": "Write and publish high-performing Medium articles with data-driven title formulas, SEO optimization, publishing timing, and automated draft creation via agent-browser",
+      "version": "1.0.0",
+      "tags": ["medium", "writing", "seo", "content-marketing", "publishing", "agent-browser"]
     }
   ]
 }

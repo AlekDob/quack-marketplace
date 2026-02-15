@@ -1,0 +1,12 @@
+{
+  "name": "medium-writer",
+  "version": "1.0.0",
+  "description": "Write and publish high-performing Medium articles optimized for virality, SEO, and audience engagement. Includes automated draft publishing via agent-browser.",
+  "author": { "name": "Quack Team", "url": "https://github.com/AlekDob" },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["medium", "writing", "seo", "content", "publishing", "agent-browser"],
+  "skills": ["skills/medium-writer"],
+  "agents": [],
+  "rules": []
+}
