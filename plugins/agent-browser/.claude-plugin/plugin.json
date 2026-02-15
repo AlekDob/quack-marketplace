@@ -1,6 +1,6 @@
 {
   "name": "agent-browser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Browser automation CLI for AI agents. Navigate pages, fill forms, click buttons, take screenshots, extract data, and automate any browser task.",
   "author": { "name": "Quack Team", "url": "https://github.com/AlekDob" },
   "repository": "https://github.com/AlekDob/quack-marketplace",
@@ -8,5 +8,9 @@
   "keywords": ["browser", "automation", "playwright", "scraping", "testing", "agent-browser"],
   "skills": ["skills/agent-browser"],
   "agents": [],
-  "rules": []
+  "rules": [],
+  "prerequisites": {
+    "npm": ["agent-browser"],
+    "instructions": "Run: npm install -g agent-browser"
+  }
 }

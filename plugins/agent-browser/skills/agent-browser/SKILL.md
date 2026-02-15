@@ -7,10 +7,39 @@ description: "Browser automation CLI for AI agents. Use when the user needs to i
 
 Fast, AI-optimized browser automation CLI built on Playwright. 93% less context usage than Playwright MCP.
 
-## Prerequisites
+## Setup Check (run FIRST)
 
-- Install: `npm install -g agent-browser`
-- Binary location: `/opt/homebrew/bin/agent-browser` (macOS ARM)
+Before using any agent-browser command, **always verify it is installed**:
+
+```bash
+which agent-browser || echo "NOT_INSTALLED"
+```
+
+If `NOT_INSTALLED`, guide the user through setup:
+
+### Installation
+
+```bash
+npm install -g agent-browser
+```
+
+This installs the CLI globally. Requires Node.js 18+.
+
+After installation, verify:
+```bash
+agent-browser --version
+```
+
+### Binary Location
+
+- **macOS ARM (Apple Silicon)**: `/opt/homebrew/bin/agent-browser`
+- **macOS Intel**: `/usr/local/bin/agent-browser`
+- **Linux**: depends on npm global prefix (`npm config get prefix`)
+
+If `which agent-browser` returns nothing after install, the npm global bin may not be in PATH. Fix with:
+```bash
+export PATH="$(npm config get prefix)/bin:$PATH"
+```
 
 ## Core Workflow
 
