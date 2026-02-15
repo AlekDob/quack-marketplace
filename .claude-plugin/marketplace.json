@@ -187,6 +187,13 @@
       "description": "Migrate existing documentation into Quack Brain v2 format with automatic classification, Mermaid conversion, and CLAUDE.md integration",
       "version": "1.0.0",
       "tags": ["migration", "documentation", "brain", "second-brain", "mermaid"]
+    },
+    {
+      "name": "agent-browser",
+      "source": "./plugins/agent-browser",
+      "description": "Browser automation CLI for AI agents - navigate pages, fill forms, click buttons, take screenshots, extract data, and automate any browser task via Playwright",
+      "version": "1.0.0",
+      "tags": ["browser", "automation", "playwright", "scraping", "testing", "web"]
     }
   ]
 }
