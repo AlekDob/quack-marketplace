@@ -44,8 +44,8 @@
     {
       "name": "use-quack-brain",
       "source": "./plugins/use-quack-brain",
-      "description": "Rule for using Quack Brain with Access Chain, knowledge management, and code breadcrumbs",
-      "version": "2.0.0",
+      "description": "Rule for using Quack Brain with Access Chain, knowledge management, YAML frontmatter format, and code breadcrumbs",
+      "version": "2.1.0",
       "tags": ["second-brain", "knowledge", "rules", "breadcrumbs"]
     },
     {
