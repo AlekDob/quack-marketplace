@@ -201,6 +201,13 @@
       "description": "Write and publish high-performing Medium articles with data-driven title formulas, SEO optimization, publishing timing, and automated draft creation via agent-browser",
       "version": "1.0.0",
       "tags": ["medium", "writing", "seo", "content-marketing", "publishing", "agent-browser"]
+    },
+    {
+      "name": "file-opener",
+      "source": "./plugins/file-opener",
+      "description": "Open files and folders in the native file manager (Finder, Explorer, xdg-open) across macOS, Windows, and Linux",
+      "version": "1.0.0",
+      "tags": ["finder", "explorer", "file-manager", "cross-platform", "utility"]
     }
   ]
 }

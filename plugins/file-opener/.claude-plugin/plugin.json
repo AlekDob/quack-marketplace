@@ -1,0 +1,12 @@
+{
+  "name": "file-opener",
+  "version": "1.0.0",
+  "description": "Open files and folders in the native file manager (Finder, Explorer, or xdg-open) across macOS, Windows, and Linux.",
+  "author": { "name": "Quack Team", "url": "https://github.com/AlekDob" },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["finder", "explorer", "file-manager", "cross-platform", "utility"],
+  "skills": ["skills/file-opener"],
+  "agents": [],
+  "rules": []
+}
