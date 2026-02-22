@@ -7,6 +7,6 @@
   "license": "MIT",
   "keywords": ["finder", "explorer", "file-manager", "cross-platform", "utility"],
   "skills": ["skills/file-opener"],
-  "agents": [],
+  "agents": ["agents/file-opener.md"],
   "rules": []
 }
