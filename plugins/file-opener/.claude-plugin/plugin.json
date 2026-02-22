@@ -8,5 +8,6 @@
   "keywords": ["finder", "explorer", "file-manager", "cross-platform", "utility"],
   "skills": ["skills/file-opener"],
   "agents": ["agents/file-opener.md"],
-  "rules": []
+  "rules": [],
+  "commands": ["commands/open.md"]
 }
