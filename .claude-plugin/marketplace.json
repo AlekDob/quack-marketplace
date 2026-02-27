@@ -58,9 +58,9 @@
     {
       "name": "project-manager",
       "source": "./plugins/project-manager",
-      "description": "Project Manager agent - plans, evaluates feasibility, coordinates quality",
-      "version": "1.0.0",
-      "tags": ["onboarding", "management", "starter", "agent-template"]
+      "description": "Project Manager agent - plans, evaluates feasibility, coordinates quality with spec-driven development",
+      "version": "1.1.0",
+      "tags": ["onboarding", "management", "starter", "agent-template", "spec-kit"]
     },
     {
       "name": "product-manager",
@@ -208,6 +208,20 @@
       "description": "Open files and folders in the native file manager (Finder, Explorer, xdg-open) across macOS, Windows, and Linux",
       "version": "1.0.0",
       "tags": ["finder", "explorer", "file-manager", "cross-platform", "utility"]
+    },
+    {
+      "name": "spec-kit-skill",
+      "source": "./plugins/spec-kit-skill",
+      "description": "GitHub Spec-Kit integration for constitution-based spec-driven development with 7-phase workflow",
+      "version": "1.0.0",
+      "tags": ["spec-driven", "constitution", "planning", "workflow", "requirements", "github-spec-kit"]
+    },
+    {
+      "name": "systematic-debugging",
+      "source": "./plugins/systematic-debugging",
+      "description": "Four-phase systematic debugging methodology - root cause investigation, pattern analysis, hypothesis testing, and implementation",
+      "version": "1.0.0",
+      "tags": ["debugging", "root-cause", "methodology", "testing", "quality"]
     }
   ]
 }

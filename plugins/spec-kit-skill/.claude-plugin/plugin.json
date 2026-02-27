@@ -1,0 +1,16 @@
+{
+  "name": "spec-kit-skill",
+  "version": "1.0.0",
+  "description": "GitHub Spec-Kit integration for constitution-based spec-driven development with a 7-phase workflow: Constitution, Specify, Clarify, Plan, Tasks, Analyze, and Implement.",
+  "longDescription": "Spec-Kit brings structured, constitution-driven feature development to your workflow.\n\nInstead of jumping straight into code, Spec-Kit guides you through seven deliberate phases: establishing governing principles (Constitution), defining functional requirements (Specify), resolving ambiguities (Clarify), creating a technical strategy (Plan), generating dependency-ordered tasks (Tasks), validating cross-artifact consistency (Analyze), and finally executing implementation (Implement).\n\nEach phase produces concrete artifacts stored in .specify/specs/ with numbered features. The workflow integrates with Git branches, uses bash scripts for automation, and ensures every decision aligns with your project's constitution. Whether you're a solo developer wanting rigor or a team needing structured collaboration, Spec-Kit turns vague feature requests into bulletproof implementation plans.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["spec-driven", "constitution", "planning", "workflow", "requirements", "github-spec-kit"],
+  "skills": ["skills/spec-kit-skill"],
+  "agents": [],
+  "rules": []
+}

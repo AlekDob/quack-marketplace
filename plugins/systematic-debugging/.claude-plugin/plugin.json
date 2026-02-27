@@ -1,0 +1,16 @@
+{
+  "name": "systematic-debugging",
+  "version": "1.0.0",
+  "description": "Four-phase systematic debugging methodology: Root Cause Investigation, Pattern Analysis, Hypothesis Testing, and Implementation. No fixes without root cause first.",
+  "longDescription": "Stop guessing. Start debugging systematically.\n\nThis skill enforces a rigorous four-phase methodology that eliminates the habit of random fixes and symptom patching. Phase 1 (Root Cause Investigation) requires reading error messages carefully, reproducing consistently, checking recent changes, and tracing data flow. Phase 2 (Pattern Analysis) compares broken code against working examples. Phase 3 (Hypothesis and Testing) applies the scientific method with minimal changes. Phase 4 (Implementation) creates a failing test, implements a single fix, and verifies.\n\nIncludes three supporting techniques: Root Cause Tracing (trace bugs backward through call stacks), Defense-in-Depth (validate at every layer), and Condition-Based Waiting (replace arbitrary timeouts with condition polling). Real-world data shows systematic debugging achieves 95% first-time fix rates vs 40% with random approaches, and is 4-6x faster than thrashing.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["debugging", "root-cause", "methodology", "testing", "quality"],
+  "skills": ["skills/systematic-debugging"],
+  "agents": [],
+  "rules": []
+}
