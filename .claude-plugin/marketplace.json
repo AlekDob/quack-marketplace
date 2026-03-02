@@ -222,6 +222,13 @@
       "description": "Four-phase systematic debugging methodology - root cause investigation, pattern analysis, hypothesis testing, and implementation",
       "version": "1.0.0",
       "tags": ["debugging", "root-cause", "methodology", "testing", "quality"]
+    },
+    {
+      "name": "ios-simulator-skill",
+      "source": "./plugins/ios-simulator-skill",
+      "description": "21 production-ready scripts for iOS simulator testing, building, and automation with semantic UI navigation and accessibility-first design",
+      "version": "1.3.0",
+      "tags": ["ios", "simulator", "xcode", "testing", "accessibility", "automation", "mobile"]
     }
   ]
 }
