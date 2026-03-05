@@ -229,6 +229,13 @@
       "description": "21 production-ready scripts for iOS simulator testing, building, and automation with semantic UI navigation and accessibility-first design",
       "version": "1.3.0",
       "tags": ["ios", "simulator", "xcode", "testing", "accessibility", "automation", "mobile"]
+    },
+    {
+      "name": "claude-code-settings",
+      "source": "./plugins/claude-code-settings",
+      "description": "Optimize Claude Code project settings to reduce token waste - configure permissions.deny rules, exclude unnecessary directories, and audit settings.json",
+      "version": "1.0.0",
+      "tags": ["settings", "optimization", "tokens", "permissions", "claude-code", "developer-tools"]
     }
   ]
 }

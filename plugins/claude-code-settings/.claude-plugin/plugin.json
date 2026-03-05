@@ -1,0 +1,12 @@
+{
+  "name": "claude-code-settings",
+  "version": "1.0.0",
+  "description": "Optimize Claude Code project settings to reduce token waste - configure permissions.deny rules, exclude unnecessary directories, and audit settings.json",
+  "author": { "name": "Quack Team", "url": "https://github.com/AlekDob" },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["settings", "optimization", "tokens", "permissions", "claude-code", "developer-tools"],
+  "skills": ["skills/claude-code-settings"],
+  "agents": [],
+  "rules": []
+}
