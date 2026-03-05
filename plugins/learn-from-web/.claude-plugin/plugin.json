@@ -11,6 +11,7 @@
   "license": "MIT",
   "keywords": ["learning", "documentation", "skill-generator", "web-scraping", "knowledge"],
   "skills": ["skills/learn-from-web"],
+  "commands": ["commands/learn.md"],
   "agents": [],
   "rules": []
 }
