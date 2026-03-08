@@ -1,15 +1,15 @@
 {
   "name": "skill-creator",
-  "version": "1.0.0",
-  "description": "Meta-skill for creating new Claude skills with proper structure, YAML frontmatter, bundled resources, and packaging. Includes init, validate, and package scripts.",
-  "longDescription": "The skill that creates skills. This meta-skill teaches your agent how to author, validate, and package new Claude skills for the Quack marketplace.\n\nYour agent will scaffold new skills with the correct directory structure, write properly formatted SKILL.md files with YAML frontmatter, bundle companion resources, and validate everything against the marketplace spec before publishing. Instead of manually following documentation and hoping the format is right, your agent handles the entire skill creation workflow from idea to publishable package.\n\nIdeal for developers who want to capture their team's expertise as reusable skills, contribute to the Quack marketplace, or create internal skills for proprietary frameworks and tools. The skill includes init, validate, and package scripts that automate the tedious parts so you can focus on the knowledge itself.",
+  "version": "2.0.0",
+  "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+  "longDescription": "The official skill creator from Anthropic, fully updated. Goes beyond scaffolding — now includes a complete eval workflow with parallel test runs, baseline comparisons, quantitative benchmarking with grading and aggregation, a browser-based review viewer, blind A/B comparison, description optimization via automated trigger testing, and support for Claude Code, Claude.ai, and Cowork environments.\n\nBundled resources include grader/comparator/analyzer agents, eval viewer with HTML report generation, benchmark aggregation scripts, and description optimization loop. The skill guides you through the full lifecycle: capture intent, write the skill, run evals, review outputs with the human, iterate, optimize triggering, and package for distribution.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"
   },
   "repository": "https://github.com/AlekDob/quack-marketplace",
   "license": "MIT",
-  "keywords": ["skill-creation", "meta-skill", "scaffolding", "packaging", "developer-tools"],
+  "keywords": ["skill-creation", "meta-skill", "eval", "benchmarking", "packaging", "developer-tools"],
   "skills": ["skills/skill-creator"],
   "agents": [],
   "rules": []

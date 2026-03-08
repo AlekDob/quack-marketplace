@@ -156,9 +156,9 @@
     {
       "name": "skill-creator",
       "source": "./plugins/skill-creator",
-      "description": "Meta-skill for creating new Claude skills with proper structure, bundled resources, and packaging scripts",
-      "version": "1.0.0",
-      "tags": ["skill-creation", "meta-skill", "scaffolding", "packaging", "developer-tools"]
+      "description": "Create, test, benchmark, and optimize Claude skills with eval workflows, grading, and description optimization",
+      "version": "2.0.0",
+      "tags": ["skill-creation", "meta-skill", "eval", "benchmarking", "packaging", "developer-tools"]
     },
     {
       "name": "docs-manager",
