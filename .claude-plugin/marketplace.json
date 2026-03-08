@@ -156,8 +156,8 @@
     {
       "name": "skill-creator",
       "source": "./plugins/skill-creator",
-      "description": "Create, test, benchmark, and optimize Claude skills with eval workflows, grading, and description optimization",
-      "version": "2.0.0",
+      "description": "Create, test, benchmark, and optimize Claude skills with eval workflows, grading, blind comparison, and description optimization",
+      "version": "2.1.0",
       "tags": ["skill-creation", "meta-skill", "eval", "benchmarking", "packaging", "developer-tools"]
     },
     {
