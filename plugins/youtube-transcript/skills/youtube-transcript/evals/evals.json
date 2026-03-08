@@ -1,0 +1,89 @@
+{
+  "skill_name": "youtube-transcript",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Get the transcript of https://www.youtube.com/watch?v=UyyjU8fzEYU",
+      "expected_output": "Transcript with timestamps from Jill Bolte Taylor TED talk",
+      "files": [],
+      "expectations": [
+        "The output contains the video title",
+        "The output contains timestamped transcript entries",
+        "The output contains a Summary section",
+        "The script extract_transcript.py was executed"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Transcript di https://youtu.be/OUyfxhFtGCo",
+      "expected_output": "Transcript from Nate Herk Claude Code video",
+      "files": [],
+      "expectations": [
+        "Short URL format was handled correctly",
+        "Output contains video title and channel",
+        "Transcript entries are present"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Summarize this YouTube video: https://www.youtube.com/watch?v=UyyjU8fzEYU",
+      "expected_output": "Summary of the TED talk about stroke of insight",
+      "files": [],
+      "expectations": [
+        "A Summary section is present",
+        "Summary captures the main points of the video",
+        "Full transcript is also included"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Get Italian subtitles for https://www.youtube.com/watch?v=UyyjU8fzEYU",
+      "expected_output": "Italian transcript",
+      "files": [],
+      "expectations": [
+        "Script was called with --lang it parameter",
+        "Output indicates Italian language"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "What does this video talk about? https://www.youtube.com/watch?v=OUyfxhFtGCo",
+      "expected_output": "Summary and transcript of the video",
+      "files": [],
+      "expectations": [
+        "Skill was triggered by natural language question about a video",
+        "Output contains both summary and transcript"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Extract chapters and transcript from https://www.youtube.com/watch?v=UyyjU8fzEYU",
+      "expected_output": "Chapters list and full transcript",
+      "files": [],
+      "expectations": [
+        "Chapters section is present if video has chapters",
+        "Full transcript is included"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "List available languages for https://www.youtube.com/watch?v=UyyjU8fzEYU",
+      "expected_output": "List of available subtitle languages",
+      "files": [],
+      "expectations": [
+        "Available languages are listed",
+        "Both manual and auto-generated options are mentioned"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Dammi i sottotitoli di questo video YouTube https://www.youtube.com/watch?v=OUyfxhFtGCo",
+      "expected_output": "Transcript in response to Italian language prompt",
+      "files": [],
+      "expectations": [
+        "Skill triggered on Italian language prompt with 'sottotitoli'",
+        "Transcript extracted successfully"
+      ]
+    }
+  ]
+}

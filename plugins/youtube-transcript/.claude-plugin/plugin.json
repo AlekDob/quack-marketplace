@@ -1,0 +1,12 @@
+{
+  "name": "youtube-transcript",
+  "version": "1.0.0",
+  "description": "Extract YouTube video transcripts with timestamps, chapters, and AI-generated summaries using yt-dlp.",
+  "author": { "name": "Quack Team", "url": "https://github.com/AlekDob" },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["youtube", "transcript", "subtitles", "video", "yt-dlp", "summary"],
+  "skills": ["skills/youtube-transcript"],
+  "agents": [],
+  "rules": []
+}

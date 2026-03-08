@@ -236,6 +236,13 @@
       "description": "Optimize Claude Code project settings to reduce token waste - configure permissions.deny rules, exclude unnecessary directories, and audit settings.json",
       "version": "1.0.0",
       "tags": ["settings", "optimization", "tokens", "permissions", "claude-code", "developer-tools"]
+    },
+    {
+      "name": "youtube-transcript",
+      "source": "./plugins/youtube-transcript",
+      "description": "Extract YouTube transcripts with timestamps, chapters, and AI summaries. Uses yt-dlp.",
+      "version": "1.0.0",
+      "tags": ["utility", "youtube", "video", "transcript"]
     }
   ]
 }
