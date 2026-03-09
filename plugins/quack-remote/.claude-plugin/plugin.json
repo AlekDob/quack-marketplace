@@ -1,0 +1,12 @@
+{
+  "name": "quack-remote",
+  "version": "1.0.0",
+  "description": "Control Quack agents remotely via REST API - list agents, execute prompts, manage sessions, fire automation jobs, and monitor status from any project.",
+  "author": { "name": "Quack Team", "url": "https://github.com/AlekDob" },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["remote-api", "automation", "agents", "sessions", "rest-api", "quack"],
+  "skills": ["skills/quack-remote"],
+  "agents": [],
+  "rules": []
+}

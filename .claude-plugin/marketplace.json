@@ -243,6 +243,13 @@
       "description": "Extract YouTube transcripts with timestamps, chapters, and AI summaries. Uses yt-dlp.",
       "version": "1.0.0",
       "tags": ["utility", "youtube", "video", "transcript"]
+    },
+    {
+      "name": "quack-remote",
+      "source": "./plugins/quack-remote",
+      "description": "Control Quack agents remotely via REST API - list agents, execute prompts, manage sessions, fire automation jobs, and monitor status from any project",
+      "version": "1.0.0",
+      "tags": ["remote-api", "automation", "agents", "sessions", "rest-api", "quack"]
     }
   ]
 }
