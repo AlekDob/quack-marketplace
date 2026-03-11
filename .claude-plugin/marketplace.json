@@ -250,6 +250,13 @@
       "description": "Control Quack agents remotely via REST API - list agents, execute prompts, manage sessions, fire automation jobs, and monitor status from any project",
       "version": "1.0.0",
       "tags": ["remote-api", "automation", "agents", "sessions", "rest-api", "quack"]
+    },
+    {
+      "name": "mongodb-query-and-index-optimize",
+      "source": "./plugins/mongodb-query-and-index-optimize",
+      "description": "MongoDB query optimization and indexing strategies with 46 rules - ESR rule, compound indexes, aggregation pipelines, text search, and performance diagnostics",
+      "version": "2.6.0",
+      "tags": ["mongodb", "database", "indexing", "query-optimization", "aggregation", "performance"]
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "mongodb-query-and-index-optimize",
+  "version": "2.6.0",
+  "description": "MongoDB query optimization and indexing strategies with 46 rules across 5 categories - ESR rule, compound indexes, aggregation pipelines, text search, and performance diagnostics",
+  "author": { "name": "MongoDB", "url": "https://github.com/mongodb" },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "Apache-2.0",
+  "keywords": ["mongodb", "database", "indexing", "query-optimization", "aggregation", "performance"],
+  "skills": ["skills/mongodb-query-and-index-optimize"],
+  "agents": [],
+  "rules": []
+}
