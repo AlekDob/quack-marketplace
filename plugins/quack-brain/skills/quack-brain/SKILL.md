@@ -194,6 +194,115 @@ Guides are NOT the same as AI Knowledge entries. They are narrative, tutorial-st
 - Each page should be **self-contained** — readable on its own, but with links to related pages for depth.
 - **Include at least one `.mmd` diagram per guide feature.** A visual architecture flow makes complex features instantly understandable. Place it alongside the markdown pages (e.g. `architecture-flow.mmd`, `data-flow.mmd`). It renders as a clickable visual diagram in the Brain UI.
 
+## Project Bootstrap
+
+When a project has **no `documentation/` folder** or **no CLAUDE.md with project context**, run this workflow to onboard it into the Quack Brain.
+
+### When to trigger
+
+- First time working on a project with no `documentation/` directory
+- CLAUDE.md exists but only has agent header (no project sections)
+- User explicitly asks to "analyze", "document", or "onboard" a project
+
+### Workflow
+
+1. **Analyze** — Read `package.json` (or equivalent), entry point, config files, and module structure.
+
+2. **Generate AST.md** — Create `documentation/AST.md` using the **code-intel MCP tools**. This is **mandatory** — do NOT use manual Glob/Read exploration as a substitute.
+
+   **Required tool**: `code_outline` from the `code-intel` MCP server. Use `ToolSearch` to load it first:
+   ```
+   ToolSearch query="select:mcp__code-intel__code_outline"
+   ```
+   Then run `code_outline` on every key file/directory to extract:
+   - Exported classes, functions, types
+   - Method signatures and line counts
+   - Module structure and dependencies
+
+   Run `code_outline` on the project root or on each module directory. For large projects, use subagents (Task tool with `subagent_type=Explore`) to parallelize the analysis.
+
+   AST.md is the **source of truth** for codebase structure — it must be generated from code-intel, not manually written.
+   ```yaml
+   ---
+   type: decision
+   project: {project-name}
+   created: {date}
+   last_verified: {date}
+   tags: [ast, code-intel, structure]
+   ---
+   ```
+
+3. **Generate architecture.md** — Create `documentation/architecture.md` with:
+   - Tech stack table
+   - Mermaid diagrams (system overview, request lifecycle, key flows)
+   - Module/domain breakdown with complexity table
+   - Key architectural patterns
+   ```yaml
+   ---
+   type: decision
+   project: {project-name}
+   created: {date}
+   last_verified: {date}
+   tags: [architecture, stack, patterns, mermaid]
+   ---
+   ```
+
+4. **Generate human guides** — Create `documentation/guide/` with narrative docs:
+   - `developer-onboarding.md` — setup + first-day checklist
+   - Feature-specific guides based on project complexity (e.g., tenant system, API patterns)
+   - Follow the "for dummies" writing style from the Human Guides section
+
+5. **Generate map.md** — Create `documentation/map.md` as navigation index linking all docs.
+
+6. **Update CLAUDE.md** — Add project sections following the CLAUDE.md Evergreen Rules (see below). Reference `documentation/AST.md` and `documentation/map.md` instead of duplicating volatile data.
+
+7. **Diary entry** — Log the bootstrap in `documentation/diary/{date}.md`.
+
+### Output checklist
+
+After bootstrap, the project should have:
+- [ ] `documentation/AST.md` — code-intel map
+- [ ] `documentation/architecture.md` — architecture + Mermaid diagrams
+- [ ] `documentation/map.md` — navigation index
+- [ ] `documentation/guide/` — at least developer-onboarding.md
+- [ ] `documentation/diary/{date}.md` — bootstrap log entry
+- [ ] `CLAUDE.md` — updated with project context (evergreen only)
+
+---
+
+## CLAUDE.md Evergreen Rules
+
+CLAUDE.md is always loaded in context. It must stay **accurate over time** without manual maintenance. Follow these rules strictly.
+
+### What BELONGS in CLAUDE.md (stable, rarely changes)
+
+- **Project overview**: what it is, who it serves, key numbers (ports, timezone)
+- **Tech stack table**: framework, database, auth — versions change rarely
+- **Commands**: npm scripts, build/run/test commands
+- **Architecture patterns**: design decisions that define how code is written (multi-tenant rules, decorator patterns, service patterns, auth flow)
+- **Critical gotchas**: traps that any developer must know before touching the code
+- **Module structure template**: canonical file layout for new modules
+- **Project structure tree**: top-level folder overview (no line counts)
+- **Knowledge Base links**: table pointing to `documentation/` files
+- **Reference to AST.md**: as the source of truth for volatile data
+
+### What DOES NOT belong in CLAUDE.md (volatile, goes stale)
+
+- **Line counts** — change with every commit. Keep in `AST.md` only
+- **Service complexity tables** — LOC rankings shift constantly. Keep in `AST.md`
+- **Mermaid diagrams** — too verbose, keep in `architecture.md`
+- **Module lists with details** — keep in `architecture.md`, reference from CLAUDE.md
+- **Specific file line numbers** — reference file paths only, not `:lineN`
+- **Dependency versions** — read from `package.json` at runtime
+
+### Golden rule
+
+> If a piece of information will become wrong after the next feature branch, it does NOT belong in CLAUDE.md. Put it in `documentation/AST.md` or `documentation/architecture.md` and reference it.
+
+When updating CLAUDE.md after significant changes, **verify existing content still holds** — don't just append. Remove or update stale sections.
+
+---
+
 ## Migration
 
 To convert existing documentation (from `.quack/brain/`, `.claude/docs/`, loose markdown, etc.) into the Quack Brain v2 structure, use the `brain-migrate` skill. It handles scanning, classifying, planning, and executing the migration with user approval at each step.

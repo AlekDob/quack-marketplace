@@ -19,6 +19,8 @@ Two-level knowledge store. Use the `quack-brain` skill for detailed instructions
 3. **LINK critical entries**: when saving a gotcha or pattern that agents should always see, add a reference in the project's CLAUDE.md Knowledge Base section
 4. **BREADCRUMB in code**: when writing code related to a Brain entry (bug fix, pattern, gotcha), add `// Brain: {slug}` above the relevant block. This links code back to its documentation. See `quack-brain` skill for full rules.
 5. **DIARY after implementing**: after completing any non-trivial task (feature, bug fix, refactor), append a bullet to `{project}/documentation/diary/YYYY-MM-DD.md`. Create the file if it doesn't exist for today. This is NOT optional — the diary is the project's daily changelog.
+6. **BOOTSTRAP new projects**: if a project has no `documentation/` folder, run the Project Bootstrap workflow from the `quack-brain` skill. This generates AST.md, architecture.md, guides, and updates CLAUDE.md.
+7. **CLAUDE.md stays evergreen**: never put volatile data (line counts, LOC tables, specific line numbers) in CLAUDE.md. Reference `documentation/AST.md` instead. See "CLAUDE.md Evergreen Rules" in the `quack-brain` skill.
 
 ## File Format (CRITICAL)
 
