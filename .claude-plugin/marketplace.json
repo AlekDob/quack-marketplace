@@ -257,6 +257,13 @@
       "description": "MongoDB query optimization and indexing strategies with 46 rules - ESR rule, compound indexes, aggregation pipelines, text search, and performance diagnostics",
       "version": "2.6.0",
       "tags": ["mongodb", "database", "indexing", "query-optimization", "aggregation", "performance"]
+    },
+    {
+      "name": "nestjs-developer",
+      "source": "./plugins/nestjs-developer",
+      "description": "NestJS Developer agent with 40 best practices for architecture, DI, security, performance, and microservices",
+      "version": "1.0.0",
+      "tags": ["nestjs", "nodejs", "typescript", "backend", "api", "agent-template"]
     }
   ]
 }
