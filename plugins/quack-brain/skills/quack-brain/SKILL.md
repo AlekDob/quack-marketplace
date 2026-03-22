@@ -89,7 +89,15 @@ graph TD
     D --> E[Tauri Event]
 ```
 
-**When to create a diagram**:
+**MANDATORY — create a diagram when ANY of these apply**:
+- A new feature involves 3+ components or files interacting
+- A data flow crosses 2+ layers (e.g. SDK → Rust → Tauri → React)
+- A new pattern or architecture decision is documented
+- A bug fix reveals a non-obvious flow that caused the bug
+- A human guide is being written (at least 1 diagram per guide)
+- The user asks to update the Brain after implementing something
+
+**Diagram types**:
 - Architecture flows (data pipelines, component relationships)
 - State machines (process states and transitions)
 - Sequence diagrams (API call chains, auth flows)
@@ -153,6 +161,11 @@ date: 2026-02-13
 - **Author**: the user's name from CLAUDE.md (`**Name**: ...`). If not found, use "Human"
 - Details go in bugs/ or patterns/. NO tags in diary frontmatter.
 
+**After writing a diary entry for a non-trivial feature, always check**:
+1. Does this feature need a **Mermaid diagram** (.mmd)? → Create one in `documentation/` or `guide/{feature}/`
+2. Does this feature need a **human guide**? → Create one in `documentation/guide/{feature}/`
+3. Does CLAUDE.md need a new link in the Knowledge Base? → Add it
+
 ## Save Criteria
 
 Before saving, all 4 must be true:
@@ -169,10 +182,15 @@ Feature-oriented narrative documentation for humans, shown in Brain UI under "Hu
 
 **Location**: `{project}/documentation/guide/{feature}/`
 
-**When to create/update a guide**:
-- A new major feature is implemented
+**MANDATORY — create/update a guide when ANY of these apply**:
+- A new user-facing feature is implemented (UI component, workflow, panel, etc.)
+- A feature touches 3+ files and introduces new UX concepts
 - Existing guide content is outdated after significant changes
+- The user asks to update the Brain after implementing something
+- A pattern or architecture change affects how humans interact with the app
 - User explicitly requests documentation
+
+**Agents must proactively check**: after completing any non-trivial feature, ask yourself "would a new developer understand this feature without reading the code?" If no, create a guide.
 
 **Format**: Plain markdown (no YAML frontmatter). First `# Heading` becomes the page title in the sidebar.
 

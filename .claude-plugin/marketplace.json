@@ -9,8 +9,8 @@
     {
       "name": "quack-brain",
       "source": "./plugins/quack-brain",
-      "description": "Complete Second Brain system with file-based knowledge, Mermaid diagrams, code breadcrumbs, Human Guides, Project Bootstrap, CLAUDE.md Evergreen Rules, and Obsidian integration",
-      "version": "4.0.0",
+      "description": "Complete Second Brain system with file-based knowledge, Mermaid diagrams, code breadcrumbs, Human Guides, Project Bootstrap, CLAUDE.md Evergreen Rules, and Obsidian integration. v4.1: MANDATORY .mmd/guide triggers",
+      "version": "4.1.0",
       "tags": ["productivity", "knowledge", "obsidian", "second-brain", "mermaid", "documentation", "bootstrap"]
     },
     {
@@ -44,9 +44,9 @@
     {
       "name": "use-quack-brain",
       "source": "./plugins/use-quack-brain",
-      "description": "Rule for using Quack Brain with Access Chain, knowledge management, YAML frontmatter format, code breadcrumbs, Project Bootstrap, and CLAUDE.md Evergreen Rules",
-      "version": "3.0.0",
-      "tags": ["second-brain", "knowledge", "rules", "breadcrumbs", "bootstrap", "evergreen"]
+      "description": "Rule for using Quack Brain with Access Chain, knowledge management, YAML frontmatter format, code breadcrumbs, Project Bootstrap, CLAUDE.md Evergreen Rules, and post-diary .mmd/guide checklist",
+      "version": "3.1.0",
+      "tags": ["second-brain", "knowledge", "rules", "breadcrumbs", "bootstrap", "evergreen", "mermaid", "guides"]
     },
     {
       "name": "code-graph-mcp",
