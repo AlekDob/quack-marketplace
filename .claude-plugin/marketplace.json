@@ -264,6 +264,13 @@
       "description": "NestJS Developer agent with 40 best practices for architecture, DI, security, performance, and microservices",
       "version": "1.0.0",
       "tags": ["nestjs", "nodejs", "typescript", "backend", "api", "agent-template"]
+    },
+    {
+      "name": "code",
+      "source": "./plugins/code",
+      "description": "Expert coding workflow — writes clean DRY code with smart grep-friendly comments, then auto-reviews via code-reviewer droid. Two-phase: code + review. Multi-language.",
+      "version": "1.0.0",
+      "tags": ["coding", "code-review", "dry", "multi-language", "development", "quality"]
     }
   ]
 }

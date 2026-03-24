@@ -1,0 +1,15 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Expert coding workflow — writes clean DRY code with smart grep-friendly comments, then auto-reviews via code-reviewer droid. Two-phase: code + review. Multi-language (TS, Rust, Python, Go, Swift). Enforces APATR-D, 20-line functions, 300-line files.",
+  "author": {
+    "name": "Quack Team",
+    "url": "https://github.com/AlekDob"
+  },
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["coding", "code-review", "dry", "multi-language", "development", "quality"],
+  "skills": ["skills/code"],
+  "agents": [],
+  "rules": []
+}
