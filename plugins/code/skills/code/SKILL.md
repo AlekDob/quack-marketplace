@@ -36,20 +36,21 @@ After implementing, run available checks:
 
 ### Phase 2: Review
 
-After Phase 1 is complete and code compiles/passes checks, spawn the `code-reviewer` agent to review all changes made.
+After Phase 1 is complete and code compiles/passes checks, read the reviewer agent instructions from `agents/code-reviewer.md` (relative to this skill's directory), then spawn a `code-reviewer` subagent to review all changes made.
 
 Use the Agent tool with `subagent_type: "code-reviewer"` and provide it with:
+- The full content of `agents/code-reviewer.md` as its operating instructions
 - A summary of what was changed and why
 - The list of modified files
 - Any specific areas of concern
 
-The reviewer will check for:
+The reviewer checks for:
 - Code quality and consistency with project patterns
 - Security vulnerabilities (OWASP top 10)
-- DRY violations
-- Naming conventions
-- Missing error handling at boundaries
-- Performance concerns
+- DRY violations and smart commenting compliance
+- Naming conventions (`verbNoun`, `PascalCase`, `UPPER_SNAKE`)
+- Missing error handling at system boundaries
+- Performance concerns (memory leaks, N+1 queries, unbounded loops)
 
 ### Phase 3: Fix (if needed)
 
