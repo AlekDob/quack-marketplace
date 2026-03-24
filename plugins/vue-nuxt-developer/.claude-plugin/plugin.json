@@ -25,6 +25,7 @@
     "suggestedColor": "#42b883",
     "suggestedAvatar": "duck3.jpeg",
     "suggestedGender": "male",
-    "skills": ["vue-best-practices", "nuxt-patterns", "pinia-store"]
+    "skills": ["vue-best-practices", "nuxt-patterns", "pinia-store", "code"],
+    "bundledPlugins": ["code"]
   }
 }

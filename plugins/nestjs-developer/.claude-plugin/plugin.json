@@ -23,7 +23,7 @@
     "suggestedColor": "#E0234E",
     "suggestedAvatar": "duck7.jpeg",
     "suggestedGender": "male",
-    "skills": ["nestjs-best-practices"],
-    "bundledPlugins": []
+    "skills": ["nestjs-best-practices", "code"],
+    "bundledPlugins": ["code"]
   }
 }

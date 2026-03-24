@@ -25,6 +25,7 @@
     "suggestedColor": "#CE422B",
     "suggestedAvatar": "duck7.jpeg",
     "suggestedGender": "male",
-    "skills": ["rust-async", "rust-memory", "rust-error-handling"]
+    "skills": ["rust-async", "rust-memory", "rust-error-handling", "code"],
+    "bundledPlugins": ["code"]
   }
 }

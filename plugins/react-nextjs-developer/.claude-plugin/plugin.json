@@ -25,6 +25,7 @@
     "suggestedColor": "#61DAFB",
     "suggestedAvatar": "duck4.jpeg",
     "suggestedGender": "male",
-    "skills": ["react-best-practices", "nextjs-patterns", "react-testing"]
+    "skills": ["react-best-practices", "nextjs-patterns", "react-testing", "code"],
+    "bundledPlugins": ["code"]
   }
 }

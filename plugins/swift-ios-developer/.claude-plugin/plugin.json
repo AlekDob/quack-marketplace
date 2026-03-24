@@ -25,6 +25,7 @@
     "suggestedColor": "#F05138",
     "suggestedAvatar": "duck6.jpeg",
     "suggestedGender": "male",
-    "skills": ["swiftui-best-practices", "swift-concurrency-patterns", "ios-app-architecture"]
+    "skills": ["swiftui-best-practices", "swift-concurrency-patterns", "ios-app-architecture", "code"],
+    "bundledPlugins": ["code"]
   }
 }

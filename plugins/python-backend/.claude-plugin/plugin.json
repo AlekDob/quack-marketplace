@@ -25,6 +25,7 @@
     "suggestedColor": "#3776AB",
     "suggestedAvatar": "duck6.jpeg",
     "suggestedGender": "male",
-    "skills": ["python-async", "python-testing", "fastapi-patterns"]
+    "skills": ["python-async", "python-testing", "fastapi-patterns", "code"],
+    "bundledPlugins": ["code"]
   }
 }
