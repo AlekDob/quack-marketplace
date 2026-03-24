@@ -8,7 +8,7 @@
   },
   "repository": "https://github.com/AlekDob/quack-marketplace",
   "license": "MIT",
-  "keywords": ["coding", "code-review", "dry", "multi-language", "development", "quality"],
+  "keywords": ["coding", "code-review", "dry", "multi-language", "development", "quality", "documentation", "brain"],
   "skills": ["skills/code"],
   "agents": [],
   "rules": []
