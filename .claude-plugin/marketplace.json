@@ -268,9 +268,9 @@
     {
       "name": "code",
       "source": "./plugins/code",
-      "description": "Expert coding workflow — writes clean DRY code with smart grep-friendly comments, then auto-reviews via bundled code-reviewer agent. Two-phase: code + review. Multi-language.",
-      "version": "1.1.0",
-      "tags": ["coding", "code-review", "dry", "multi-language", "development", "quality"]
+      "description": "Expert coding workflow — four phases: Code, Review, Fix, Document. Writes clean DRY code with smart comments, auto-reviews, then documents in the Brain with breadcrumbs. Multi-language.",
+      "version": "1.2.0",
+      "tags": ["coding", "code-review", "dry", "multi-language", "development", "quality", "documentation", "brain"]
     }
   ]
 }

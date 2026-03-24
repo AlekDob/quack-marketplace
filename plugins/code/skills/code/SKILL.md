@@ -1,12 +1,12 @@
 ---
 name: code
-description: "Expert coding workflow that writes clean, DRY code with smart search-friendly comments, then automatically reviews it. Use this skill whenever the user invokes /code, asks you to implement a feature, write code, fix a bug, refactor, or build something — especially for tasks that benefit from disciplined coding practices and quality review. Use it proactively for any non-trivial coding task."
+description: "Expert coding workflow: write clean DRY code with smart comments, auto-review for quality/security, then document in the Brain with breadcrumbs. Four phases: Code → Review → Fix → Document. Use whenever the user invokes /code, asks to implement a feature, write code, fix a bug, refactor, or build something."
 user_invocable: true
 ---
 
-# /code — Write + Review
+# /code — Write + Review + Document
 
-A two-phase coding workflow: first write production-quality code, then automatically review it for quality, security, and DRY compliance.
+A four-phase coding workflow: write production-quality code, auto-review it, fix issues, then document in the Brain with breadcrumbs for future agent discovery.
 
 ## When to Use
 
@@ -54,10 +54,44 @@ The reviewer checks for:
 
 ### Phase 3: Fix (if needed)
 
-If the reviewer finds critical issues, fix them immediately following the same coder agent principles. Then report the final result to the user, including:
+If the reviewer finds critical issues, fix them immediately following the same coder agent principles.
+
+### Phase 4: Document (conditional)
+
+After fixing (or if no fixes were needed), evaluate whether the task warrants documentation. Read the documenter agent instructions from `agents/documenter.md` (relative to this skill's directory).
+
+**Activate Phase 4 when ANY of these is true:**
+- Bug fix with non-obvious root cause → Brain gotcha/bug entry
+- New reusable pattern discovered → Brain pattern entry
+- New feature built → diary entry (mandatory) + possibly guide
+- Architectural decision made → Brain decision entry
+- Reviewer found something worth recording
+
+**Skip Phase 4 when ALL of these are true:**
+- Typo fix, cosmetic change, or trivial refactor
+- No new exports added
+- No architecture change
+- No non-obvious decisions
+
+When Phase 4 activates, spawn a documenter subagent with:
+- The full content of `agents/documenter.md` as its operating instructions
+- Summary of what was built and what the reviewer found
+- List of modified files and new exports
+- The project's CLAUDE.md path for context
+
+The documenter will:
+1. Write Brain entries (gotcha/bug/pattern/decision) with proper YAML frontmatter
+2. Append diary entry to `documentation/diary/YYYY-MM-DD.md`
+3. Place `// Brain: {slug}` breadcrumbs in the code (the Pollicino trail)
+4. Update `documentation/AST.md` if new exports were added
+5. Update `documentation/map.md` if architecture changed
+6. Add CLAUDE.md Knowledge Base links for critical entries
+
+Then report the final result to the user, including:
 - What was implemented
 - What the reviewer found
 - What was fixed (if anything)
+- What was documented (Brain entries, breadcrumbs, AST/map updates)
 
 ## Important
 
