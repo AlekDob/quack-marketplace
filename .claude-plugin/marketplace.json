@@ -271,6 +271,13 @@
       "description": "Expert coding workflow — scored review (0-10), iterative fix loop, Brain documentation with breadcrumbs. AI pitfall detection, validation gates, DRY. Multi-language.",
       "version": "1.3.0",
       "tags": ["coding", "code-review", "dry", "multi-language", "development", "quality", "documentation", "brain", "critical-thinking"]
+    },
+    {
+      "name": "laravel-developer",
+      "source": "./plugins/laravel-developer",
+      "description": "Laravel Full-Stack Developer agent with backend, Blade/Livewire 3/Tailwind frontend, testing (PHPUnit/Pest), debugging, and quality tools. Auto-detects environment and Laravel 9-12 version.",
+      "version": "1.0.0",
+      "tags": ["laravel", "php", "livewire", "blade", "tailwind", "fullstack", "agent-template"]
     }
   ]
 }

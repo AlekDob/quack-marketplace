@@ -1,0 +1,50 @@
+{
+  "skill_name": "laravel",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Ho un progetto Laravel 11 con Sail. Devo creare un sistema CRUD per gestire dei 'Product'. Mi serve il model con migration (name string, price decimal, description text, is_active boolean), un controller resource con form request per validazione, e il test feature per verificare che la creazione e la lista funzionino. Il progetto usa Pest per i test.",
+      "expected_output": "Model Product con migration, ProductController resource, StoreProductRequest/UpdateProductRequest, Feature test con Pest. Deve rilevare ambiente Sail e usare il prefisso corretto. Struttura L11 (no Kernel, bootstrap/app.php).",
+      "files": [],
+      "assertions": [
+        {"id": "env-detection", "text": "Rileva e menziona ambiente Sail (prefisso ./vendor/bin/sail)"},
+        {"id": "l11-structure", "text": "Usa struttura Laravel 11 (no Http/Kernel.php, casts() metodo non $casts property)"},
+        {"id": "migration-columns", "text": "Migration contiene tutte le colonne richieste: name (string), price (decimal), description (text), is_active (boolean)"},
+        {"id": "form-request", "text": "Usa FormRequest dedicata per validazione (non validazione nel controller)"},
+        {"id": "pest-test", "text": "Test scritti in Pest (non PHPUnit), con test per creazione e lista"},
+        {"id": "sqlite-test", "text": "Menziona SQLite per test o usa RefreshDatabase"},
+        {"id": "service-pattern", "text": "Logica di business separata dal controller (Service o Action pattern, o almeno controller snello)"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Devo creare un componente Livewire 3 per un form di contatto nel mio progetto Laravel. Il form ha campi nome, email e messaggio. Quando l'utente invia, deve salvare un record Contact nel DB e mostrare un messaggio di successo. Usa validazione con gli attribute di Livewire 3 e Tailwind per lo styling.",
+      "expected_output": "Componente Livewire 3 in App\\Livewire con #[Rule] attributes, dispatch event, template Blade con wire:model e classi Tailwind. Deve usare sintassi v3 corretta, non v2.",
+      "files": [],
+      "assertions": [
+        {"id": "lw3-namespace", "text": "Usa namespace App\\Livewire (non App\\Http\\Livewire che è v2)"},
+        {"id": "lw3-rule-attribute", "text": "Usa #[Rule('...')] attributes per validazione (non protected $rules property)"},
+        {"id": "lw3-dispatch", "text": "Usa $this->dispatch() per eventi (non emit/emitTo che sono v2)"},
+        {"id": "wire-model", "text": "Usa wire:model correttamente (wire:model per deferred, wire:model.live per real-time)"},
+        {"id": "tailwind-styling", "text": "Template Blade usa classi Tailwind CSS per lo styling"},
+        {"id": "contact-model", "text": "Include model Contact e migration per salvare nel DB"},
+        {"id": "success-message", "text": "Implementa messaggio di successo dopo invio"},
+        {"id": "single-root", "text": "Template Blade ha un singolo elemento radice (requisito Livewire)"}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Il mio progetto Laravel 10 su Docker mi dà questo errore quando provo ad accedere alla pagina /admin/users: 'Illuminate\\Database\\QueryException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app.permissions' doesn't exist'. Ho un sistema di permessi con Spatie Permission. Come lo risolvo?",
+      "expected_output": "Deve seguire il workflow di debugging: parse stack trace, categorizzare come errore DB, identificare che la tabella permissions non esiste, suggerire di eseguire le migration di Spatie con il prefisso Docker corretto. Output nel formato [LARAVEL_DEBUG].",
+      "files": [],
+      "assertions": [
+        {"id": "docker-env", "text": "Riconosce ambiente Docker e usa prefisso docker exec per i comandi"},
+        {"id": "error-categorization", "text": "Categorizza correttamente come errore Database (tabella mancante)"},
+        {"id": "root-cause", "text": "Identifica che la tabella permissions di Spatie non è stata migrata"},
+        {"id": "migration-fix", "text": "Suggerisce di eseguire le migration (php artisan migrate o vendor:publish + migrate)"},
+        {"id": "debug-format", "text": "Usa il formato strutturato [LARAVEL_DEBUG] per l'output"},
+        {"id": "verification-step", "text": "Include un passo di verifica dopo il fix"}
+      ]
+    }
+  ]
+}
