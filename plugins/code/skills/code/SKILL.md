@@ -1,6 +1,6 @@
 ---
 name: code
-description: "Expert coding workflow: write clean DRY code with smart comments, auto-review for quality/security, then document in the Brain with breadcrumbs. Four phases: Code → Review → Fix → Document. Use whenever the user invokes /code, asks to implement a feature, write code, fix a bug, refactor, or build something."
+description: "Expert coding workflow: write clean DRY code with smart comments, auto-review with scored critical analysis (0-10), iterative fix loop until score >= 8, then document in the Brain with breadcrumbs. Four phases: Code → Review → Fix → Document. Use whenever the user invokes /code, asks to implement a feature, write code, fix a bug, refactor, or build something."
 user_invocable: true
 ---
 
@@ -44,17 +44,29 @@ Use the Agent tool with `subagent_type: "code-reviewer"` and provide it with:
 - The list of modified files
 - Any specific areas of concern
 
-The reviewer checks for:
-- Code quality and consistency with project patterns
-- Security vulnerabilities (OWASP top 10)
-- DRY violations and smart commenting compliance
-- Naming conventions (`verbNoun`, `PascalCase`, `UPPER_SNAKE`)
-- Missing error handling at system boundaries
-- Performance concerns (memory leaks, N+1 queries, unbounded loops)
+The reviewer will:
+1. Run **validation gates** (type-check, lint, tests, security scan) to gather objective metrics
+2. Score the code across **6 weighted dimensions** (Security 25%, Correctness 25%, Performance 15%, Maintainability 15%, Smart Commenting 10%, Data Integrity 10%)
+3. Check for **AI-specific pitfalls** (problem evasion, happy path bias, over-engineering, stale assumptions)
+4. Produce a scored report with CRITICAL (must fix) and MINOR (deferred) issues
 
-### Phase 3: Fix (if needed)
+The review output includes a **score out of 10** and a **PASSED/NEEDS_FIX status** (threshold: 8.0).
 
-If the reviewer finds critical issues, fix them immediately following the same coder agent principles.
+### Phase 3: Fix Loop (iterative, max 3 rounds)
+
+If the reviewer reports `NEEDS_FIX` (score < 8.0):
+
+1. Fix ALL critical issues (P1/P2) listed in the review
+2. Re-run Phase 2 (spawn a new reviewer subagent)
+3. Repeat until score >= 8.0 or 3 review rounds completed
+
+**Rules:**
+- Only fix CRITICAL issues between rounds — MINOR issues stay deferred
+- Each round should show score improvement (IMPROVING trend)
+- If score plateaus after 2 rounds, STOP and report remaining issues to the user
+- Never exceed 3 total review rounds to avoid infinite loops
+
+If the reviewer reports `PASSED` (score >= 8.0), skip directly to Phase 4.
 
 ### Phase 4: Document (conditional)
 

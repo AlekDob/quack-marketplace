@@ -1,7 +1,7 @@
 {
   "name": "code",
-  "version": "1.2.0",
-  "description": "Expert coding workflow — four phases: Code, Review, Fix, Document. Writes clean DRY code with smart comments, auto-reviews, then documents in the Brain with breadcrumbs. Multi-language (TS, Rust, Python, Go, Swift). Enforces APATR-D.",
+  "version": "1.3.0",
+  "description": "Expert coding workflow — four phases: Code, scored Review (0-10 with validation gates), iterative Fix loop (until score >= 8), Document in Brain with breadcrumbs. Multi-language. Enforces APATR-D, DRY, AI pitfall detection.",
   "author": {
     "name": "Quack Team",
     "url": "https://github.com/AlekDob"
