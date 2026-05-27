@@ -142,9 +142,9 @@
     {
       "name": "openai-image-gen",
       "source": "./plugins/openai-image-gen",
-      "description": "Generate images using OpenAI's GPT Image API. Defaults to gpt-image-2 (ChatGPT Images 2.0, April 2026): flexible aspect ratios up to 3:1, multilingual text rendering, up to 10 images per prompt. Falls back to gpt-image-1.5 for transparent-background assets (logos, icons).",
-      "version": "1.1.0",
-      "tags": ["openai", "image-generation", "ai-art", "gpt-image-2", "gpt-image", "dall-e", "chatgpt-images-2"]
+      "description": "Generate images using OpenAI's GPT Image API with support for multiple models, sizes, and transparent backgrounds",
+      "version": "1.0.0",
+      "tags": ["openai", "image-generation", "ai-art", "gpt-image", "dall-e"]
     },
     {
       "name": "learn-from-web",
@@ -278,27 +278,6 @@
       "description": "Laravel Full-Stack Developer agent with backend, Blade/Livewire 3/Tailwind frontend, testing (PHPUnit/Pest), debugging, and quality tools. Auto-detects environment and Laravel 9-12 version.",
       "version": "1.0.0",
       "tags": ["laravel", "php", "livewire", "blade", "tailwind", "fullstack", "agent-template"]
-    },
-    {
-      "name": "code-intelligence",
-      "source": "./plugins/code-intelligence",
-      "description": "Code navigation and review toolkit with MCP code-intel (tree-sitter) and native LSP support. Decision matrix for LSP vs tree-sitter vs Grep. Includes code-explorer and code-reviewer agents.",
-      "version": "1.0.0",
-      "tags": ["code-intelligence", "lsp", "tree-sitter", "code-navigation", "code-review", "ast", "refactoring"]
-    },
-    {
-      "name": "brain-hooks",
-      "source": "./plugins/brain-hooks",
-      "description": "Automated hooks for Quack Brain: pre-read AST/gotcha intelligence, pre-write safety checks, session tracking, repeated-read detection, and auto diary entries. Inspired by OpenWolf.",
-      "version": "1.0.0",
-      "tags": ["hooks", "brain", "automation", "second-brain", "knowledge-management", "token-optimization"]
-    },
-    {
-      "name": "workstream-naming",
-      "source": "./plugins/workstream-naming",
-      "description": "Framework for naming workstreams with human-friendly, context-rich titles that convey intent and stakeholder value — avoid jargon, lead with impact.",
-      "version": "1.0.0",
-      "tags": ["workstream", "naming", "project-ops", "documentation", "methodology", "stakeholder-communication"]
     }
   ]
 }
