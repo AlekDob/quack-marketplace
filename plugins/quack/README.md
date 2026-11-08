@@ -48,7 +48,7 @@ Quack is the rubber duck next to Claude: it says little, at the right time. It a
 | | Duck | Subagent | Model, effort | Job |
 |---|---|---|---|---|
 | <img src="assets/team/pia.webp" width="56" alt="Pia"> | **Pia**, planner | `quack:planner` | Opus, high | Reads the code and writes a short plan: files, steps, how to check. Never edits. |
-| <img src="assets/team/kit.webp" width="56" alt="Kit"> | **Kit**, coder | `quack:coder` | Sonnet, medium | Carries out the plan or a clear task, runs the tests, returns only what changed. |
+| <img src="assets/team/kit.webp" width="56" alt="Kit"> | **Kit**, coder | `quack:coder` | Opus, medium | Builds the plan or a long job in his own context, runs the tests, returns only what changed. |
 | <img src="assets/team/marco.webp" width="56" alt="Marco"> | **Marco**, scout | `quack:scout` | Haiku, low | Finds where things are. Paths and line ranges, never file dumps. |
 | <img src="assets/team/iris.webp" width="56" alt="Iris"> | **Iris**, researcher | `quack:researcher` | Sonnet, medium | Web research with sources. |
 | <img src="assets/team/dante.webp" width="56" alt="Dante"> | **Dante**, scribe | `quack:scribe` | Haiku, low | Diary, gotchas, decisions: the memory the next chat starts from. |
@@ -56,11 +56,11 @@ Quack is the rubber duck next to Claude: it says little, at the right time. It a
 **Who gets the work.** The session rules route each task:
 
 - a small or short task: the main chat does it (a subagent has a startup cost);
-- the chat runs on Sonnet and the task is big or unclear: Pia plans on Opus, the chat builds;
-- the chat runs on Opus: it plans itself, and hands long, clear implementation work to Kit on Sonnet;
+- the chat runs on Sonnet and the task is big or unclear: Pia plans, Kit builds, both on Opus, and the cheaper chat coordinates;
+- the chat runs on Opus: it plans itself, and hands only long implementation jobs to Kit, so the chat stays small;
 - searches, research and notes: Marco, Iris and Dante.
 
-**What we measured.** Same repo (a 280-file Next.js site), same tasks, Claude Code 2.1, two runs each. On single tasks of 4 to 12 steps, Quack moved the cost by -3% to +4%: inside the noise. Opus did those tasks itself and never called a duck, which is right: a subagent costs more than it saves on a short job. Forcing "Pia plans, Kit builds" on a chat already on Opus cost 50% more. The biggest lever was the model: the same multi-file task (shared rate limiter, two routes, a test) cost $0.25 with the chat on Sonnet and $0.55 on Opus, with the same result. Quack's own savings come from long chats (the /clear and /compact reminders, the cold-cache warning, the code map), which a one-prompt test can't show: check /usage over a week.
+**What we measured.** See [bench/RESULTS.md](bench/RESULTS.md): every run, the tasks, the method and how to repeat it.
 
 Claude Code doesn't let a plugin change the main chat's model or effort. Routing works by choosing the duck, and each duck has its own. You can always ask for one by name: "have Pia plan this".
 
