@@ -1,0 +1,14 @@
+{
+  "description": "Quack: token rules at session start, reminders when the chat gets expensive, a hint before reading big files whole",
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-start.mjs\"", "timeout": 30 }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/nudge.mjs\"", "timeout": 10 }] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Read", "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/read-hint.mjs\"", "timeout": 10 }] }
+    ]
+  }
+}

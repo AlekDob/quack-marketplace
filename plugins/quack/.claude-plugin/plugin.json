@@ -1,0 +1,13 @@
+{
+  "name": "quack",
+  "version": "1.0.0",
+  "description": "Spend fewer tokens in Claude Code, automatically: short session rules, /compact and /clear reminders at the right time, a PageIndex-style code map, and cheap subagents for code search, web research and docs.",
+  "author": {
+    "name": "Alek Dobrohotov & Studio Futuro",
+    "url": "https://www.studiofuturo.ai"
+  },
+  "homepage": "https://quack.build",
+  "repository": "https://github.com/AlekDob/quack-marketplace",
+  "license": "MIT",
+  "keywords": ["tokens", "cost", "context", "compact", "prompt-cache", "subagents", "code-index", "pageindex", "documentation"]
+}
