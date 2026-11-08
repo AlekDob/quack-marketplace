@@ -7,6 +7,13 @@
   },
   "plugins": [
     {
+      "name": "quack",
+      "source": "./plugins/quack",
+      "description": "Spend fewer tokens in Claude Code, automatically: short session rules, /compact and /clear reminders, a PageIndex-style code map, and cheap subagents for search, research and docs. By Alek Dobrohotov & Studio Futuro",
+      "version": "1.0.0",
+      "tags": ["tokens", "cost", "context", "subagents", "code-index", "documentation"]
+    },
+    {
       "name": "quack-brain",
       "source": "./plugins/quack-brain",
       "description": "Complete Second Brain system with file-based knowledge, Mermaid diagrams, code breadcrumbs, Human Guides, Project Bootstrap, CLAUDE.md Evergreen Rules, and Obsidian integration. v4.1: MANDATORY .mmd/guide triggers",
