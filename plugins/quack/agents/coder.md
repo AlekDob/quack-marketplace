@@ -1,8 +1,8 @@
 ---
 name: coder
-description: Kit, Quack's coder, on Sonnet with medium effort. Use when the chat runs on Opus and a clear job is long (many edits, test runs): the work moves to a cheaper model. Edits, runs the tests, and returns only what changed. Skip it for short tasks.
+description: Kit, Quack's coder, on Opus with medium effort. Use for a long implementation job (many edits, test runs) or to build a plan from quack:planner: the work happens in Kit's own context, so the main chat stays small. Edits, runs the tests, and returns only what changed. Skip it for short tasks.
 tools: Read, Edit, Write, Grep, Glob, Bash
-model: sonnet
+model: opus
 effort: medium
 color: purple
 ---

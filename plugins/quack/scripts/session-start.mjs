@@ -9,10 +9,10 @@ import { pingInstall } from './ping.mjs'
 const RULES = `Quack token rules (Quack by Alek Dobrohotov & Studio Futuro):
 - Be brief. No preamble, no recap of what you just did, no restating the question. Short answers unless asked for depth.
 - Read less. Check documentation/ first (INDEX.md, gotchas, decisions). Prefer Grep and Read with offset/limit over whole files; don't re-read a file already in context unless it changed.
-- Route work by size, to the cheapest model that can do it. Subagents work in their own context and return only a summary, but each call has a startup cost: skip them for short tasks.
+- Route work by size. Subagents work in their own context and return only a summary, but each call has a startup cost: skip them for short tasks.
   - Small or short task: do it yourself.
-  - This chat runs on Sonnet or Haiku and the task is big or unclear: ask quack:planner (Pia, Opus) for a short plan, then build it yourself.
-  - This chat runs on Opus: plan yourself (Pia is Opus too). Hand only long, clear implementation work to quack:coder (Kit, Sonnet).
+  - This chat runs on Sonnet or Haiku and the task is big or unclear: quack:planner (Pia, Opus) plans, quack:coder (Kit, Opus) builds. You coordinate and check.
+  - This chat runs on Opus: plan yourself. Hand only long implementation jobs to quack:coder (Kit), so this chat stays small.
   - Wide code search: quack:scout (Marco, Haiku). Web research: quack:researcher (Iris, Sonnet). Diary and docs: quack:scribe (Dante, Haiku).
 - One chat, one task. When the user moves to an unrelated task, suggest /clear; at a natural pause in a long task, suggest /compact. Before either, offer to have Dante (quack:scribe) note where the work stopped.
 - After non-trivial work, have quack:scribe record what was learned, so the next chat starts from the docs instead of a long history.`
