@@ -36,10 +36,33 @@ Most of the waste comes from four habits:
 | Big-file hint | PreToolUse hook on Read | Before Claude reads a file of 400+ lines whole, it points to the code map or Grep, then a line range. |
 | Code map | `/quack:index` | A PageIndex-style `documentation/INDEX.md`: folder → file (lines) — purpose → symbols with line ranges. Big repos get one sub-index per folder. It refreshes itself at every session start. |
 | Memory between chats | `quack:scribe` + session hook | Diary, gotchas and decisions live in `documentation/`. A new chat gets the last diary lines, so /clear doesn't mean starting over. |
-| Cheaper models | `quack:scout` (Haiku, low effort), `quack:researcher` (Sonnet, medium), `quack:scribe` (Haiku, low) | Code search, web research and docs run on smaller models in their own context. Only the summary comes back to the main chat. |
+| The duck team | Five subagents, see below | Planning, coding, code search, web research and docs each run on the cheapest model that does the job well, in their own context. Only the summary comes back to the main chat. |
 | Setup audit | `/quack:checkup` | Measures memory files, skill descriptions, MCP servers and settings. Offers a status line with context use and cost, and a compact limit for 1M-context models. |
 
-Everything runs locally with Node. No network calls, no telemetry, no dependencies.
+Everything runs locally with Node, with no dependencies. The only network call is the install ping below.
+
+## The duck team
+
+Quack is the rubber duck next to Claude: it says little, at the right time. It also brings a team. Each duck is a subagent with its own model and effort, so the expensive model thinks briefly and the cheaper ones do the long work.
+
+| | Duck | Subagent | Model, effort | Job |
+|---|---|---|---|---|
+| <img src="assets/team/pia.webp" width="56" alt="Pia"> | **Pia**, planner | `quack:planner` | Opus, high | Reads the code and writes a short plan: files, steps, how to check. Never edits. |
+| <img src="assets/team/kit.webp" width="56" alt="Kit"> | **Kit**, coder | `quack:coder` | Sonnet, medium | Carries out the plan or a clear task, runs the tests, returns only what changed. |
+| <img src="assets/team/marco.webp" width="56" alt="Marco"> | **Marco**, scout | `quack:scout` | Haiku, low | Finds where things are. Paths and line ranges, never file dumps. |
+| <img src="assets/team/iris.webp" width="56" alt="Iris"> | **Iris**, researcher | `quack:researcher` | Sonnet, medium | Web research with sources. |
+| <img src="assets/team/dante.webp" width="56" alt="Dante"> | **Dante**, scribe | `quack:scribe` | Haiku, low | Diary, gotchas, decisions: the memory the next chat starts from. |
+
+**Who gets the work.** The session rules route each task:
+
+- a small or short task: the main chat does it (a subagent has a startup cost);
+- the chat runs on Sonnet and the task is big or unclear: Pia plans on Opus, the chat builds;
+- the chat runs on Opus: it plans itself, and hands long, clear implementation work to Kit on Sonnet;
+- searches, research and notes: Marco, Iris and Dante.
+
+**What we measured.** Same repo (a 280-file Next.js site), same tasks, Claude Code 2.1, two runs each. On single tasks of 4 to 12 steps, Quack moved the cost by -3% to +4%: inside the noise. Opus did those tasks itself and never called a duck, which is right: a subagent costs more than it saves on a short job. Forcing "Pia plans, Kit builds" on a chat already on Opus cost 50% more. The biggest lever was the model: the same multi-file task (shared rate limiter, two routes, a test) cost $0.25 with the chat on Sonnet and $0.55 on Opus, with the same result. Quack's own savings come from long chats (the /clear and /compact reminders, the cold-cache warning, the code map), which a one-prompt test can't show: check /usage over a week.
+
+Claude Code doesn't let a plugin change the main chat's model or effort. Routing works by choosing the duck, and each duck has its own. You can always ask for one by name: "have Pia plan this".
 
 ## What no plugin can do
 
@@ -62,10 +85,15 @@ Optional environment variables:
 | `QUACK_BIG_FILE_LINES` | `400` | Files this long get the big-file hint |
 | `QUACK_CACHE_TTL_MIN` | auto | Cache lifetime in minutes: 60 when the transcript shows 1-hour cache writes, otherwise 5 |
 | `QUACK_DEBUG` | off | `1` prints hook errors |
+| `QUACK_NO_PING` | off | `1` turns off the install ping (`DO_NOT_TRACK=1` works too) |
+
+## Install ping
+
+The first session after you install or update Quack sends one request to quack.build with three fields: `installed` or `updated`, Quack's version, and a random id made on your machine. Nothing else: no paths, code, prompts, names or account data. It tells us how many people use Quack. Set `QUACK_NO_PING=1` to turn it off. The code is in `scripts/ping.mjs`.
 
 ## What Quack itself costs
 
-About 500 tokens per session: roughly 290 for the short descriptions of 2 skills and 3 subagents (`claude plugin details quack` shows them) and roughly 250 for the session rules. A single whole-file read it prevents usually saves more than that.
+About 750 tokens per session: roughly 400 for the short descriptions of 2 skills and 5 subagents (`claude plugin details quack` shows them) and roughly 330 for the session rules. A single whole-file read it prevents usually saves more than that.
 
 ## Pairs well with
 

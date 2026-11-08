@@ -26,8 +26,8 @@ export function emit(event, { context, notice } = {}) {
 export const kTokens = (tokens) => `${Math.round(tokens / 1000)}k`
 
 // shortcut: one small JSON file per session, never pruned; add cleanup if the folder ever grows large.
-const stateFile = (sessionId) => path.join(
-  process.env.CLAUDE_PLUGIN_DATA || path.join(os.tmpdir(), 'quack'), 'sessions', `${String(sessionId).replace(/[^\w-]/g, '')}.json`)
+export const DATA_DIR = () => process.env.CLAUDE_PLUGIN_DATA || path.join(os.tmpdir(), 'quack')
+const stateFile = (sessionId) => path.join(DATA_DIR(), 'sessions', `${String(sessionId).replace(/[^\w-]/g, '')}.json`)
 
 /** Per-session memory, so each reminder is shown once instead of on every message. */
 export function loadState(sessionId) {

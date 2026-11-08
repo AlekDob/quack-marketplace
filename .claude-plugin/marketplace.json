@@ -9,8 +9,8 @@
     {
       "name": "quack",
       "source": "./plugins/quack",
-      "description": "Spend fewer tokens in Claude Code, automatically: short session rules, /compact and /clear reminders, a PageIndex-style code map, and cheap subagents for search, research and docs. By Alek Dobrohotov & Studio Futuro",
-      "version": "1.0.0",
+      "description": "Spend fewer tokens in Claude Code, automatically: short session rules, /compact and /clear reminders, a PageIndex-style code map, and a team of five ducks, each on the cheapest model for its job: planner, coder, scout, researcher, scribe. By Alek Dobrohotov & Studio Futuro",
+      "version": "1.1.0",
       "tags": ["tokens", "cost", "context", "subagents", "code-index", "documentation"]
     },
     {

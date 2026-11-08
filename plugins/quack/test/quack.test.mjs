@@ -20,7 +20,7 @@ function write(root, rel, text) {
 }
 
 function runScript(name, input) {
-  const res = spawnSync('node', [path.join(SCRIPTS, name)], { input: JSON.stringify(input), encoding: 'utf8', env: { ...process.env, CLAUDE_PLUGIN_DATA: DATA } })
+  const res = spawnSync('node', [path.join(SCRIPTS, name)], { input: JSON.stringify(input), encoding: 'utf8', env: { ...process.env, CLAUDE_PLUGIN_DATA: DATA, QUACK_NO_PING: '1' } })
   assert.equal(res.status, 0, res.stderr)
   return res.stdout ? JSON.parse(res.stdout) : null
 }
@@ -103,4 +103,23 @@ test('status line shows context and the heavy-chat hint', () => {
   const res = spawnSync('node', [path.join(SCRIPTS, 'statusline.mjs')], {
     input: JSON.stringify({ model: { display_name: 'Opus' }, context_window: { used_percentage: 72.4, total_input_tokens: 144_000 }, cost: { total_cost_usd: 1.234 } }), encoding: 'utf8' })
   assert.equal(res.stdout.trim(), 'Opus · ctx 72% (144k) · $1.23 · heavy chat: /compact or /clear')
+})
+
+test('install ping: once per version, anonymous, and off with QUACK_NO_PING', async () => {
+  const http = await import('node:http')
+  const got = []
+  const server = http.createServer((req, res) => { let b = ''; req.on('data', (c) => { b += c }); req.on('end', () => { got.push(JSON.parse(b)); res.end('{}') }) })
+  await new Promise((r) => server.listen(0, r))
+  process.env.QUACK_PING_URL = `http://127.0.0.1:${server.address().port}`
+  delete process.env.QUACK_NO_PING
+  const { pingInstall } = await import('../scripts/ping.mjs')
+  const dir = tmp()
+  await pingInstall(dir)
+  await pingInstall(dir) // same version: no second ping
+  process.env.QUACK_NO_PING = '1'
+  await pingInstall(tmp())
+  server.close()
+  assert.equal(got.length, 1)
+  assert.deepEqual(Object.keys(got[0]).sort(), ['event', 'id', 'version'])
+  assert.equal(got[0].event, 'installed')
 })
