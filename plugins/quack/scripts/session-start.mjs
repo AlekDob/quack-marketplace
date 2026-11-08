@@ -4,12 +4,17 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { runHook, emit, kTokens } from './lib.mjs'
 import { buildIndex, isGitRepo, projectRoot, INDEX_PATH } from './index.mjs'
+import { pingInstall } from './ping.mjs'
 
 const RULES = `Quack token rules (Quack by Alek Dobrohotov & Studio Futuro):
 - Be brief. No preamble, no recap of what you just did, no restating the question. Short answers unless asked for depth.
 - Read less. Check documentation/ first (INDEX.md, gotchas, decisions). Prefer Grep and Read with offset/limit over whole files; don't re-read a file already in context unless it changed.
-- Delegate to cheaper models: wide code searches to the quack:scout subagent (Haiku), web research to quack:researcher (Sonnet), diary and docs to quack:scribe (Haiku). They work in their own context and return only a summary.
-- One chat, one task. When the user moves to an unrelated task, suggest /clear; at a natural pause in a long task, suggest /compact. Before either, offer to have quack:scribe note where the work stopped.
+- Route work by size, to the cheapest model that can do it. Subagents work in their own context and return only a summary, but each call has a startup cost: skip them for short tasks.
+  - Small or short task: do it yourself.
+  - This chat runs on Sonnet or Haiku and the task is big or unclear: ask quack:planner (Pia, Opus) for a short plan, then build it yourself.
+  - This chat runs on Opus: plan yourself (Pia is Opus too). Hand only long, clear implementation work to quack:coder (Kit, Sonnet).
+  - Wide code search: quack:scout (Marco, Haiku). Web research: quack:researcher (Iris, Sonnet). Diary and docs: quack:scribe (Dante, Haiku).
+- One chat, one task. When the user moves to an unrelated task, suggest /clear; at a natural pause in a long task, suggest /compact. Before either, offer to have Dante (quack:scribe) note where the work stopped.
 - After non-trivial work, have quack:scribe record what was learned, so the next chat starts from the docs instead of a long history.`
 
 const DIARY_LINES = 10
@@ -20,6 +25,7 @@ runHook(async (input) => {
   const fresh = input.source !== 'resume' && input.source !== 'compact' // a resumed or compacted chat has its history
   const parts = [RULES, indexNote(root), fresh ? diaryTail(root) : null]
   emit('SessionStart', { context: parts.filter(Boolean).join('\n\n'), notice: resumeNotice(input) })
+  await pingInstall()
 })
 
 function indexNote(root) {
